@@ -7,10 +7,13 @@ import IconButton from '@mui/material/IconButton';
 
 
 
-export function TopToolbar() {
+export function TopToolbar({ color, buttons }) {
+
+
+
     return (
         <div>
-            <AppBar position="static">
+            <AppBar position="static" sx={{ backgroundColor: color }}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -19,13 +22,21 @@ export function TopToolbar() {
                         aria-label="menu"
                         sx={{ mr: 2 }}
                     >
-                        
+
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Stephen Cahillane
+
+                    {buttons &&
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
+                        {buttons.label}
                     </Typography>
-                    <Button color="inherit">LinkedIn</Button>
-                    <Button color="inherit">GitHub</Button>
+                    }
+
+                    {buttons &&
+                        <>
+                            <Button color="inherit">{buttons.label2}</Button>
+                            <Button color="inherit">{buttons.label3}</Button>
+                        </>
+                    }
                 </Toolbar>
             </AppBar>
         </div>

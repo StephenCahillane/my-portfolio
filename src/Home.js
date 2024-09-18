@@ -8,7 +8,7 @@ import { AnimatedCharacter } from './Character';
 import { Room } from './Room';
 import { Tween, Easing } from '@tweenjs/tween.js';  // Import tween for smooth camera transition
 import { view } from 'framer-motion/client';
-
+import { Card, CardContent, Typography, Button } from '@mui/material';
 
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
@@ -124,12 +124,6 @@ export function Home() {
   };
 
 
-
-
-
-
-
-
   const handleKeyDown = (event) => {
     const moveSpeed = 1;
     let newPosition = [...characterPosition];
@@ -203,8 +197,6 @@ export function Home() {
     return null;
   };
 
-
-
   useEffect(() => {
     if (viewingComputer) {
       console.log('viewingComp:', viewingComputer);
@@ -218,76 +210,182 @@ export function Home() {
 
 
 
+
+
+
+
   const roomPosition = roomRef.current ? roomRef.current.position : new Vector3(0, 0, 0);
 
   return (
     <>
-      <TopToolbar />
-      <div>
-        <Canvas
-          style={{
-            
-            width: '600px',
-            height: '400px',
-            borderRadius: '10px',
-            display: 'block',
-            margin: '0 auto',
-            marginTop: '5em',
-          }}
-          className="canvas"
-        >
-          <ambientLight intensity={10} color={'pink'} />
-          <pointLight position={[10, 10, 10]} />
-          <InitialCameraSetup />
+      <TopToolbar color={'#1c2027'} />
 
-          {controlsEnabled && <OrbitControls />}
+      <div className='homePg'>
+        <Card className='profileCard' sx={{ backgroundColor: '#3a3f48', border: '1px solid #39FF14', mb: 3 }}>
+          <CardContent>
+            <TopToolbar color={'#3a3f48'} buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }} />
+            <Card sx={{
+              width: '95%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
+              border: 'none',
+            }}>
+              <CardContent>
+                <div className='headerAboutMe'>
+                  <div className='btn&info'>
+                    <Typography sx={{ color: 'white' }}>
+                      I'm <span style={{ color: '#39FF14', fontSize: '22px' }}>Stephen</span>, a Full Stack Java Developer. This portfolio has been built in React, Material UI, and React3Fiber.
+                    </Typography>
+                    <Button
+                      variant="outlined"
+                      sx={{
+                        ml: 6,
+                        mt: 2,
+                        color: '#39FF14',             // Change text color
+                        borderColor: '#39FF14',       // Change border color
+                        '&:hover': {
+                          borderColor: '#39FF14',     // Ensure border color changes on hover as well
+                          backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
+                        },
+                      }}
+                    >
+                      Contact
+                    </Button>
+                  </div>
+                  <img src='1684511227977 (1).jpg' style={{ width: '150px', marginLeft: 20 }} alt='Invalid Src' ></img>
+                </div>
+                <Typography sx={{ color: 'white', fontSize: '14px', mt: 3 }}>
+                  I am a passionate Full Stack Developer with <span style={{ color: '#39FF14' }}>two years of experience </span>specializing in Java, Spring, React, and web design languages.
+                  My journey in tech is complemented by a <span style={{ color: '#39FF14' }}>solid foundation in networking and cybersecurity, </span>
+                  ensuring a well-rounded approach to building secure and efficient applications.
 
-          {showMessage && (
-            <Html position={[10, 55, 0]} center>
-              <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
-                Press 'e' to use Computer
-              </div>
-            </Html>
-          )}
+                  Before transitioning into the tech industry,
+                  I spent <span style={{ color: '#39FF14' }}>six years in the U.S. Air Force </span> as an Aircraft Mechanic. During this time,
+                  I developed a meticulous attention to detail and problem-solving skills.
 
-          {viewingComputer && (
-            <Html position={[-130, 55, 10]} center>
-              <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', borderRadius: '5px', fontStyle: 'italic', width: '400px' }}>
-                <p>Press 'f' to exit Computer</p>
-                <p>Press 'L' for LinkedIn</p>
-                <p>Press 'T' for Twitter</p>
-                <p>Press 'Y' for YouTube</p>
-              </div>
-            </Html>
-          )}
 
-          {viewingComputer && (
-            <Html position={[-130, 14, -35]} center>
-              <div style={{ color: 'white', borderRadius: '5px', width: '400px', padding: '10px' }}>
-                <img src="1684511227977 (1).jpg" alt="Example Image" style={{borderRadius: '50%', width: '75px', height: '75px', marginBottom: '10px' }} />
-                
-              </div>
-            </Html>
-          )}
+                  Now based in Ireland, I am eager to contribute to the local tech community by leveraging my diverse skill
+                  set to drive technological progress. My goal is to build <span style={{ color: '#39FF14' }}>sustainable and scalable code bases </span>
+                  that support innovation and efficiency in the Irish tech landscape.
+                </Typography>
 
-          <CameraController
-            targetPosition={roomPosition}
-            moveCamera={moveCamera}
-            setMoveCamera={setMoveCamera}
-            exitComputer={exitComputer}
-          />
+                <div className='skillCards'>
+                  <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                    <CardContent>
+                      <img src='icons8-react-80.png'></img>
+                      <Typography sx={{ color: 'white', textAlign: 'center' }}>ReactJS</Typography>
+                    </CardContent>
+                  </Card>
+                  <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                    <CardContent>
+                      <img src='icons8-java-80.png'></img>
+                      <Typography sx={{ color: 'white', textAlign: 'center' }}>Java</Typography>
+                    </CardContent>
+                  </Card>
+                  <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                    <CardContent>
+                      <img src='icons8-spring-boot-80.png'></img>
+                      <Typography sx={{ color: 'white', textAlign: 'center' }}>Spring</Typography>
+                    </CardContent>
+                  </Card>
+                  <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                    <CardContent>
+                      <img src='icons8-nodejs-80.png'></img>
+                      <Typography sx={{ color: 'white', textAlign: 'center' }}>NodeJS</Typography>
+                    </CardContent>
+                  </Card>
+                  <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                    <CardContent>
+                      <img src='icons8-express-js-80.png'></img>
+                      <Typography sx={{ color: 'white', textAlign: 'center' }}>ExpressJS</Typography>
+                    </CardContent>
+                  </Card>
+                  <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                    <CardContent>
+                      <img src='icons8-python-80.png'></img>
+                      <Typography sx={{ color: 'white', textAlign: 'center' }}>Python</Typography>
+                    </CardContent>
+                  </Card>
 
-          <Room ref={roomRef} />
 
-          <AnimatedCharacter
-            ref={characterRef}
-            position={characterPosition}
-            rotation={characterRotation}
-            isAnimating={isAnimating}
-          />
 
-        </Canvas>
-      </div>
+                </div>
+              </CardContent>
+            </Card>
+          </CardContent>
+        </Card >
+
+        <div className='rightSide'>
+
+          <Card sx={{mb: 5, width: '100%', height: '300px', backgroundColor: '#3a3f48'}}>
+            <CardContent>
+              
+            </CardContent>
+          </Card>
+
+          <Canvas
+            style={{
+              width: '600px',
+              height: '400px',
+              borderRadius: '10px',
+              
+            }}
+            className="canvas"
+          >
+            <ambientLight intensity={10} color={'pink'} />
+            <pointLight position={[10, 10, 10]} />
+            <InitialCameraSetup />
+
+            {controlsEnabled && <OrbitControls />}
+
+            {showMessage && (
+              <Html position={[10, 55, 0]} center>
+                <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
+                  Press 'e' to use Computer
+                </div>
+              </Html>
+            )}
+
+            {viewingComputer && (
+              <Html position={[-130, 55, 10]} center>
+                <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', borderRadius: '5px', fontStyle: 'italic', width: '400px' }}>
+                  <p>Press 'f' to exit Computer</p>
+                  <p>Press 'L' for LinkedIn</p>
+                  <p>Press 'T' for Twitter</p>
+                  <p>Press 'Y' for YouTube</p>
+                </div>
+              </Html>
+            )}
+
+            {viewingComputer && (
+              <Html position={[-130, 14, -35]} center>
+                <div style={{ color: 'white', borderRadius: '5px', width: '400px', padding: '10px' }}>
+                  <img src="1684511227977 (1).jpg" alt="Example Image" style={{ borderRadius: '50%', width: '75px', height: '75px', marginBottom: '10px' }} />
+
+                </div>
+              </Html>
+            )}
+
+            <CameraController
+              targetPosition={roomPosition}
+              moveCamera={moveCamera}
+              setMoveCamera={setMoveCamera}
+              exitComputer={exitComputer}
+            />
+
+            <Room ref={roomRef} />
+
+            <AnimatedCharacter
+              ref={characterRef}
+              position={characterPosition}
+              rotation={characterRotation}
+              isAnimating={isAnimating}
+            />
+
+          </Canvas>
+
+        </div>
+
+
+      </div >
     </>
   );
 }
