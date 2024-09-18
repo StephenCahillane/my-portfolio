@@ -9,6 +9,14 @@ import { Room } from './Room';
 import { Tween, Easing } from '@tweenjs/tween.js';  // Import tween for smooth camera transition
 import { view } from 'framer-motion/client';
 import { Card, CardContent, Typography, Button } from '@mui/material';
+import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import MouseIcon from '@mui/icons-material/Mouse';
+import MainToolbar from './Toolbar';
+
 
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
@@ -218,20 +226,20 @@ export function Home() {
 
   return (
     <>
-      <TopToolbar color={'#1c2027'} />
+      <MainToolbar color={'#1c2027'} />
 
       <div className='homePg'>
-        <Card className='profileCard' sx={{ backgroundColor: '#3a3f48', border: '1px solid #39FF14', mb: 3 }}>
+        <Card className='profileCard' sx={{ backgroundColor: '#3a3f48', mb: 3, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
           <CardContent>
             <TopToolbar color={'#3a3f48'} buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }} />
             <Card sx={{
-              width: '95%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
+              width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
               border: 'none',
             }}>
               <CardContent>
                 <div className='headerAboutMe'>
                   <div className='btn&info'>
-                    <Typography sx={{ color: 'white' }}>
+                    <Typography sx={{ color: 'white', maxWidth: '240px', mr: 0 }}>
                       I'm <span style={{ color: '#39FF14', fontSize: '22px' }}>Stephen</span>, a Full Stack Java Developer. This portfolio has been built in React, Material UI, and React3Fiber.
                     </Typography>
                     <Button
@@ -250,9 +258,27 @@ export function Home() {
                       Contact
                     </Button>
                   </div>
-                  <img src='1684511227977 (1).jpg' style={{ width: '150px', marginLeft: 20 }} alt='Invalid Src' ></img>
+                  <div style={{ position: 'relative', display: 'inline-block' }}>
+                    <img
+                      src='cutout-pic2.png'
+                      style={{ width: '100%', height: '175px', display: 'block', objectFit: 'cover' }}
+                      alt='Invalid Src'
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: '#3a3f48',
+                        opacity: 0.3, // Adjust opacity to control the intensity of the overlay
+                        pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
+                      }}
+                    />
+                  </div>
                 </div>
-                <Typography sx={{ color: 'white', fontSize: '14px', mt: 3 }}>
+                <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
                   I am a passionate Full Stack Developer with <span style={{ color: '#39FF14' }}>two years of experience </span>specializing in Java, Spring, React, and web design languages.
                   My journey in tech is complemented by a <span style={{ color: '#39FF14' }}>solid foundation in networking and cybersecurity, </span>
                   ensuring a well-rounded approach to building secure and efficient applications.
@@ -315,9 +341,48 @@ export function Home() {
 
         <div className='rightSide'>
 
-          <Card sx={{mb: 5, width: '100%', height: '300px', backgroundColor: '#3a3f48'}}>
+          <Card sx={{ mb: 5, width: '100%', height: '450px', backgroundColor: '#3a3f48', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
             <CardContent>
-              
+              <img src='logo-cropped.png' style={{ display: 'block', margin: '0 auto', height: '100px' }}></img>
+              <List sx={{ color: 'white', textAlign: 'left', mx: 'auto', maxWidth: '600px', mt: 2 }}>
+
+                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
+                  <ListItemIcon>
+                    <MouseIcon sx={{ color: '#39FF14' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Scroll" />
+                </ListItem>
+
+
+                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
+                  <ListItemIcon>
+                    <ArrowForwardIcon sx={{ color: '#39FF14' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Move Forward" />
+                </ListItem>
+
+                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
+                  <ListItemIcon>
+                    <ArrowBackIcon sx={{ color: '#39FF14' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Move Backward" />
+                </ListItem>
+
+                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
+                  <ListItemIcon>
+                    <ArrowUpwardIcon sx={{ color: '#39FF14' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Move Up" />
+                </ListItem>
+
+                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
+                  <ListItemIcon>
+                    <ArrowDownwardIcon sx={{ color: '#39FF14' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Move Down" />
+                </ListItem>
+
+              </List>
             </CardContent>
           </Card>
 
@@ -326,7 +391,7 @@ export function Home() {
               width: '600px',
               height: '400px',
               borderRadius: '10px',
-              
+
             }}
             className="canvas"
           >
