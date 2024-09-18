@@ -6,6 +6,8 @@ import { AnimationMixer, Box3, Vector3, LineSegments } from 'three';
 import TopToolbar from './TopToolbar';
 import { AnimatedCharacter } from './Character';
 import { Room } from './Room';
+import { Tween, Easing } from '@tweenjs/tween.js';  // Import tween for smooth camera transition
+import { view } from 'framer-motion/client';
 
 
 // Extend the LineSegments to work with React Three Fiber
@@ -19,8 +21,14 @@ export function Home() {
   const characterRef = useRef();
   const roomRef = useRef();
   const [showMessage, setShowMessage] = useState(false);
+  const [controlsEnabled, setControlsEnabled] = useState(true);  // Controls whether OrbitControls is enabled or not
+  const [viewingComputer, setViewingComputer] = useState(false);
+  const [moveCamera, setMoveCamera] = useState(false);  // State to trigger camera movement
+  const [exitComputer, setExitComputer] = useState(false);
 
-  
+
+
+
   useEffect(() => {
     if (roomRef.current && characterRef.current) {
       // Manually define the room's bounding box center and size
@@ -39,10 +47,10 @@ export function Home() {
           console.log('Boxes are intersecting. Setting showMessage to true.');
         }
       } else {
-         
-          setShowMessage(false);
-          console.log('Boxes are not intersecting. Setting showMessage to false.');
-        
+
+        setShowMessage(false);
+        console.log('Boxes are not intersecting. Setting showMessage to false.');
+
       }
     }
 
@@ -59,16 +67,26 @@ export function Home() {
   }, [characterPosition]); // Ensure refs are included in the dependency array
 
 
-
-
   const handleEKeyDown = (event) => {
     if ((event.key === 'e' || event.key === 'E') && showMessage) {
-      console.log('here:', showMessage);
       console.log('The "E" key was pressed!');
+      setMoveCamera(true);  // Trigger camera movement
+      setControlsEnabled(false);  // Disable OrbitControls
+      setViewingComputer(true);
     }
   };
 
+  const handleFKeyDown = (event) => {
+    if ((event.key === 'f' || event.key === 'F') && viewingComputer) {
+      console.log('The "F" key was pressed!');
+      setControlsEnabled(true);
+      setViewingComputer(false);
+      setExitComputer(true);
 
+      // Set the camera's position
+
+    }
+  };
 
   const handleKeyDown = (event) => {
     const moveSpeed = 1;
@@ -109,6 +127,57 @@ export function Home() {
     }
   };
 
+
+  const CameraController = ({ targetPosition, moveCamera, setMoveCamera, exitComputer }) => {
+    const { camera } = useThree();
+    const cameraTarget = useRef(new Vector3());
+
+    useFrame(() => {
+      if (moveCamera && !exitComputer) {
+        // Define the target position for the camera
+        cameraTarget.current.set(-26.5, 24.5 + 20, -12.5);//-12.5
+
+        // Move the camera smoothly towards the target position
+        camera.position.lerp(cameraTarget.current, 0.05); // Adjust the speed by changing the 0.05 value
+
+        const lookAtTarget = new Vector3(-130, 15.5, 40); // Adjust the target to fit your scene
+        camera.lookAt(lookAtTarget);
+        // Check if the camera is close enough to the target
+        if (camera.position.distanceTo(cameraTarget.current) < 0.1) {
+          camera.position.copy(cameraTarget.current);  // Snap to target when close enough
+          setMoveCamera(false);  // Stop moving camera
+        }
+      }
+
+      if (exitComputer) {
+        console.log('exiting computer, ready to move cam');
+        cameraTarget.current.set(-180, 400, -20);
+        camera.position.lerp(cameraTarget.current, 0.05);
+        
+        setExitComputer(false);
+      }
+    });
+
+    return null;
+  };
+
+
+
+  useEffect(() => {
+    if (viewingComputer) {
+      console.log('viewingComp:', viewingComputer);
+    }
+
+    window.addEventListener('keydown', handleFKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleFKeyDown);
+    };
+  }, [viewingComputer]);
+
+
+
+  const roomPosition = roomRef.current ? roomRef.current.position : new Vector3(0, 0, 0);
+
   return (
     <>
       <TopToolbar />
@@ -127,27 +196,42 @@ export function Home() {
         >
           <ambientLight intensity={10} color={'pink'} />
           <pointLight position={[10, 10, 10]} />
-          <OrbitControls />
-          
+
+
+          {controlsEnabled && <OrbitControls />}
+
           {showMessage && (
-          <Html position={[0, 70, 0]} center>
-            <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
-              Press 'e' to use Computer
-            </div>
-          </Html>
-        )}
+            <Html position={[0, 70, 0]} center>
+              <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
+                Press 'e' to use Computer
+              </div>
+            </Html>
+          )}
 
+          {viewingComputer && (
+            <Html position={[-130, 55, 10]} center>
+              <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
+                Press 'f' to exit Computer
+              </div>
+            </Html>
+          )}
 
+          <CameraController
+            targetPosition={roomPosition}
+            moveCamera={moveCamera}
+            setMoveCamera={setMoveCamera}
+            exitComputer={exitComputer}
+          />
 
           <Room ref={roomRef} />
-          
+
           <AnimatedCharacter
             ref={characterRef}
             position={characterPosition}
             rotation={characterRotation}
             isAnimating={isAnimating}
           />
-          
+
         </Canvas>
       </div>
     </>
