@@ -14,6 +14,18 @@ import { view } from 'framer-motion/client';
 extend({ LineSegments });
 
 
+const InitialCameraSetup = () => {
+  const { camera } = useThree();
+
+  useEffect(() => {
+    // Set the initial camera position and orientation
+    camera.position.set(30, 90, 50); // Example position
+    camera.lookAt(0, 0, 0); // Example target to look at
+  }, [camera]);
+
+  return null; // This component doesn't render anything
+};
+
 export function Home() {
   const [characterPosition, setCharacterPosition] = useState([0, 27, 0]);
   const [characterRotation, setCharacterRotation] = useState([0, 0, 0]);
@@ -56,6 +68,9 @@ export function Home() {
 
 
     window.addEventListener('keydown', handleEKeyDown);
+    window.addEventListener('keydown', handleYKeyDown);
+    window.addEventListener('keydown', handleTKeyDown);
+    window.addEventListener('keydown', handleLKeyDown);
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
 
@@ -63,6 +78,8 @@ export function Home() {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
       window.removeEventListener('keydown', handleEKeyDown);
+      window.removeEventListener('keydown', handleLKeyDown);
+      window.removeEventListener('keydown', handleYKeyDown);
     };
   }, [characterPosition]); // Ensure refs are included in the dependency array
 
@@ -82,11 +99,36 @@ export function Home() {
       setControlsEnabled(true);
       setViewingComputer(false);
       setExitComputer(true);
-
-      // Set the camera's position
-
     }
   };
+
+  const handleLKeyDown = (event) => {
+    if ((event.key === 'l' || event.key === 'L') && viewingComputer) {
+      console.log('The "L" key was pressed!');
+      window.open('https://www.linkedin.com/in/stephen-cahillane-68689b27b/', '_blank'); // Opens LinkedIn in a new tab
+    }
+  };
+
+  const handleTKeyDown = (event) => {
+    if ((event.key === 't' || event.key === 'T') && viewingComputer) {
+      console.log('The "L" key was pressed!');
+      window.open('https://x.com/Stephen_C_Tech', '_blank'); // Opens LinkedIn in a new tab
+    }
+  };
+
+  const handleYKeyDown = (event) => {
+    if ((event.key === 'y' || event.key === 'Y') && viewingComputer) {
+      console.log('The "L" key was pressed!');
+      window.open('https://www.youtube.com/@SteveHighLevel-gl8cf', '_blank'); // Opens LinkedIn in a new tab
+    }
+  };
+  
+
+
+
+
+
+
 
   const handleKeyDown = (event) => {
     const moveSpeed = 1;
@@ -151,9 +193,9 @@ export function Home() {
 
       if (exitComputer) {
         console.log('exiting computer, ready to move cam');
-        cameraTarget.current.set(-180, 400, -20);
-        camera.position.lerp(cameraTarget.current, 0.05);
-        
+        camera.position.set(30, 90, 50);
+
+
         setExitComputer(false);
       }
     });
@@ -196,12 +238,12 @@ export function Home() {
         >
           <ambientLight intensity={10} color={'pink'} />
           <pointLight position={[10, 10, 10]} />
-
+          <InitialCameraSetup />
 
           {controlsEnabled && <OrbitControls />}
 
           {showMessage && (
-            <Html position={[0, 70, 0]} center>
+            <Html position={[10, 55, 0]} center>
               <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
                 Press 'e' to use Computer
               </div>
@@ -210,8 +252,11 @@ export function Home() {
 
           {viewingComputer && (
             <Html position={[-130, 55, 10]} center>
-              <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
-                Press 'f' to exit Computer
+              <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', borderRadius: '5px', fontStyle: 'italic', width: '400px' }}>
+                <p>Press 'f' to exit Computer</p>
+                <p>Press 'L' for LinkedIn</p>
+                <p>Press 'T' for Twitter</p>
+                <p>Press 'Y' for YouTube</p>
               </div>
             </Html>
           )}
