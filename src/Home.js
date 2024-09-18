@@ -1,8 +1,8 @@
 import { Canvas, useLoader, useFrame, useThree, extend } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import { Html, OrbitControls, useGLTF } from '@react-three/drei';
 import { useEffect, useState, useRef, forwardRef } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { AnimationMixer, Box3, Vector3, LineSegments, BufferGeometry, LineBasicMaterial, Float32BufferAttribute } from 'three';
+import { AnimationMixer, Box3, Vector3, LineSegments } from 'three';
 import TopToolbar from './TopToolbar';
 import { AnimatedCharacter } from './Character';
 import { Room } from './Room';
@@ -10,9 +10,6 @@ import { Room } from './Room';
 
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
-
-
-
 
 
 export function Home() {
@@ -23,14 +20,7 @@ export function Home() {
   const roomRef = useRef();
   const [showMessage, setShowMessage] = useState(false);
 
-  useEffect(() => {
-    if (showMessage){
-      
-    };
-  },[showMessage]);
-
-
-
+  
   useEffect(() => {
     if (roomRef.current && characterRef.current) {
       // Manually define the room's bounding box center and size
@@ -44,20 +34,40 @@ export function Home() {
 
       // Check for intersection
       if (roomBox.intersectsBox(characterBox)) {
-        setShowMessage(true);
+        if (!showMessage) {
+          setShowMessage(true);
+          console.log('Boxes are intersecting. Setting showMessage to true.');
+        }
       } else {
-        setShowMessage(false);
+         
+          setShowMessage(false);
+          console.log('Boxes are not intersecting. Setting showMessage to false.');
+        
       }
     }
 
+
+    window.addEventListener('keydown', handleEKeyDown);
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
+      window.removeEventListener('keydown', handleEKeyDown);
     };
-  }, [characterPosition, roomRef.current, characterRef.current]); // Ensure refs are included in the dependency array
+  }, [characterPosition]); // Ensure refs are included in the dependency array
+
+
+
+
+  const handleEKeyDown = (event) => {
+    if ((event.key === 'e' || event.key === 'E') && showMessage) {
+      console.log('here:', showMessage);
+      console.log('The "E" key was pressed!');
+    }
+  };
+
 
 
   const handleKeyDown = (event) => {
@@ -118,7 +128,17 @@ export function Home() {
           <ambientLight intensity={10} color={'pink'} />
           <pointLight position={[10, 10, 10]} />
           <OrbitControls />
-          {/* <CameraSetup /> */}
+          
+          {showMessage && (
+          <Html position={[0, 70, 0]} center>
+            <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
+              Press 'e' to use Computer
+            </div>
+          </Html>
+        )}
+
+
+
           <Room ref={roomRef} />
           
           <AnimatedCharacter
