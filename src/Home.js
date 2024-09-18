@@ -122,7 +122,7 @@ export function Home() {
       window.open('https://www.youtube.com/@SteveHighLevel-gl8cf', '_blank'); // Opens LinkedIn in a new tab
     }
   };
-  
+
 
 
 
@@ -226,7 +226,7 @@ export function Home() {
       <div>
         <Canvas
           style={{
-            border: '5px solid black',
+            
             width: '600px',
             height: '400px',
             borderRadius: '10px',
@@ -257,6 +257,15 @@ export function Home() {
                 <p>Press 'L' for LinkedIn</p>
                 <p>Press 'T' for Twitter</p>
                 <p>Press 'Y' for YouTube</p>
+              </div>
+            </Html>
+          )}
+
+          {viewingComputer && (
+            <Html position={[-130, 14, -35]} center>
+              <div style={{ color: 'white', borderRadius: '5px', width: '400px', padding: '10px' }}>
+                <img src="1684511227977 (1).jpg" alt="Example Image" style={{borderRadius: '50%', width: '75px', height: '75px', marginBottom: '10px' }} />
+                
               </div>
             </Html>
           )}
