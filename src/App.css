@@ -44,10 +44,37 @@ body {
   margin-top: 2em;
 }
 
+.webCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 items per row */
+  gap: 16px; /* Adjust spacing between items as needed */
+  padding: 16px; /* Optional padding around the grid */
+  margin-top: 0.5em;
+}
+
 .rightSide {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-left: 6em;
+}
+
+.paragraph {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.divider {
+  width: 50%;
+  height: 1px;
+  background-color: #39FF14;
+}
+
+.cv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
 }
