@@ -13,9 +13,70 @@ function Websites() {
         <>
             <MainToolbar color={'#1c2027'} />
 
+            <div className='topHeadr'>
+                <div style={{ marginRight: '5em' }}>
+                    <Typography sx={{ color: 'white', fontSize: '28px', maxWidth: '700px', fontFamily: '"Dancing Script", cursive',  }}>
+                        Below websites were fully built out by me with <span style={{color: '#39FF14'}}>backend setup to capture visitor data </span> 
+                        for ad re-targeting purposes, <span style={{color: '#39FF14'}}> appointment booking with confirmations and follow-ups </span>, chat widgets for customer support
+                        and more. Custom webhooks were built to integrate with <span style={{color: '#39FF14'}}> Stripe for payments, Meta API, and Meta pixels. </span> Contact me
+                        if you would like more information.
+                    </Typography>
+                </div>
+
+
+                <div>
+
+                    <Card
+                        className='logos'
+                        style={{
+                            backgroundColor: '#282c34',
+                            border: 'none',
+                            boxShadow: 'none',   // Remove any shadow that might look like a border
+                            outline: 'none',
+                        }}
+                    >
+                        <CardContent
+                            style={{
+                                border: 'none',
+                                outline: 'none',
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(2, 1fr)',
+                                    gap: '40px',
+                                }}
+                            >
+                                <div className='iconLogo'>
+                                    <img src='zapier.png' alt='Zapier' />
+                                    <Typography sx={{ color: 'white' }}>Zapier</Typography>
+                                </div>
+                                <div className='iconLogo'>
+                                    <img src='ghl.jpg' alt='GHL' style={{ width: '80px' }} />
+                                    <Typography sx={{ color: 'white' }}>GHL</Typography>
+                                </div>
+                                <div className='iconLogo'>
+                                    <img src='stripe.png' alt='Stripe' style={{ width: '80px' }} />
+                                    <Typography sx={{ color: 'white' }}>Stripe</Typography>
+                                </div>
+                                <div className='iconLogo'>
+                                    <img src='meta.png' alt='Meta API' style={{ width: '80px' }} />
+                                    <Typography sx={{ color: 'white' }}>Meta API</Typography>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                </div>
+            </div>
+
+
+
             <div className='sitesPage'>
 
-                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5 }}>Strength2Heal Counselling</Typography>
+
+                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5, fontFamily: '"Dancing Script", cursive', }}>Strength2Heal Counselling</Typography>
                 <Typography sx={{ color: '#39FF14', textAlign: 'center', fontSize: '16px' }}>Key Features</Typography>
 
                 <List sx={{ color: 'white', textAlign: 'left', maxWidth: '600px' }}>
@@ -60,7 +121,7 @@ function Websites() {
                         />
                     </CardContent>
                 </Card>
-                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5 }}>Sugradh Creche</Typography>
+                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5, fontFamily: '"Dancing Script", cursive', }}>Sugradh Creche</Typography>
                 <Typography sx={{ color: '#39FF14', textAlign: 'center', fontSize: '16px' }}>Key Features</Typography>
 
                 <List sx={{ color: 'white', textAlign: 'left', maxWidth: '600px' }}>
@@ -101,7 +162,7 @@ function Websites() {
                         />
                     </CardContent>
                 </Card>
-                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5 }}>One Source Business Development</Typography>
+                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5, fontFamily: '"Dancing Script", cursive', }}>One Source Business Development</Typography>
                 <Typography sx={{ color: '#39FF14', textAlign: 'center', fontSize: '16px' }}>Key Features</Typography>
 
                 <List sx={{ color: 'white', textAlign: 'left', maxWidth: '600px' }}>
@@ -148,7 +209,7 @@ function Websites() {
                         />
                     </CardContent>
                 </Card>
-                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5 }}>Profit Phantoms Digital Community</Typography>
+                <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '24px', mt: 5, fontFamily: '"Dancing Script", cursive', }}>Profit Phantoms Digital Community</Typography>
                 <Typography sx={{ color: '#39FF14', textAlign: 'center', fontSize: '16px' }}>Key Features</Typography>
 
                 <List sx={{ color: 'white', textAlign: 'left', maxWidth: '600px' }}>

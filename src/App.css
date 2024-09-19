@@ -86,3 +86,24 @@ body {
   padding: 10px;
   justify-items: center; 
 }
+
+.topHeadr {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+}
+
+.iconLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
