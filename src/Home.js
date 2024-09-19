@@ -16,6 +16,10 @@ import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import MouseIcon from '@mui/icons-material/Mouse';
 import MainToolbar from './Toolbar';
+import Websites from './Websites';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 // Extend the LineSegments to work with React Three Fiber
@@ -54,7 +58,7 @@ export function Home() {
   const [showCVCard, setShowCVCard] = useState(false);
   //end of left hand states
 
-
+const navigate = useNavigate();
 
   useEffect(() => {
     if (roomRef.current && characterRef.current) {
@@ -496,6 +500,7 @@ export function Home() {
                         backgroundColor: 'rgba(57, 255, 20, 0.1)' // Add a subtle background on hover (optional)
                       }
                     }}
+                    onClick={() => navigate('/websites')}
                   >
                     View Portfolio
                   </Button>
