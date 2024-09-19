@@ -35,6 +35,7 @@ const InitialCameraSetup = () => {
 };
 
 export function Home() {
+  //3d model states
   const [characterPosition, setCharacterPosition] = useState([0, 27, 0]);
   const [characterRotation, setCharacterRotation] = useState([0, 0, 0]);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -45,7 +46,13 @@ export function Home() {
   const [viewingComputer, setViewingComputer] = useState(false);
   const [moveCamera, setMoveCamera] = useState(false);  // State to trigger camera movement
   const [exitComputer, setExitComputer] = useState(false);
+//end of model states
 
+//left hand card states
+  
+
+
+//end of left hand states
 
 
 
@@ -232,6 +239,10 @@ export function Home() {
         <Card className='profileCard' sx={{ backgroundColor: '#3a3f48', mb: 3, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
           <CardContent>
             <TopToolbar color={'#3a3f48'} buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }} />
+            
+
+            
+            
             <Card sx={{
               width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
               border: 'none',
@@ -391,7 +402,6 @@ export function Home() {
               width: '600px',
               height: '400px',
               borderRadius: '10px',
-
             }}
             className="canvas"
           >
