@@ -65,10 +65,10 @@ function Vision() {
 
                         <iframe
                             title="Embedded Website"
-                            src=""
+                            src="https://drive.google.com/file/d/1AExb6LYWBrkolJXyDrOee9Q_FJUhelUH/preview"
                             width="95%"
                             height='400px'
-                            style={{ border: 'none' }}
+                            style={{ border: 'none', display: 'block', margin: '0 auto' }}
                         />
                     </CardContent>
                 </Card>

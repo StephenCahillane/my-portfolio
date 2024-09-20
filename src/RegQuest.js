@@ -13,7 +13,7 @@ function RegQuest() {
                 <div className='appHeaderLeft'>
                     <Typography sx={{ color: 'white', fontSize: '105px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px' }}>RegQuest</Typography>
                     <Typography sx={{ color: 'white', fontSize: '18px', maxWidth: '600px' }}>An application developed to help young programmers understand and
-                    use Regular Expressions in a fun, game environment.
+                        use Regular Expressions in a fun, game environment.
                     </Typography>
                 </div>
 
@@ -45,7 +45,8 @@ function RegQuest() {
 
                         <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }}>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Backend Java Spring Setup to store passwords, traps and character data.' />
+                            <ListItemText sx={{ color: 'white' }} primary='Participated in daily scrum meetings, stand ups and operated
+                            in an agile environment.' />
                         </ListItem>
 
                     </List>
@@ -57,12 +58,14 @@ function RegQuest() {
                     <CardContent>
 
                         <iframe
-                            title="Embedded Website"
-                            src=""
+                            title="Embedded YouTube Video"
+                            src="https://www.youtube.com/embed/R0ujZbNLKHY"
                             width="95%"
-                            height='400px'
+                            height="400px"
                             style={{ border: 'none' }}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
+
                     </CardContent>
                 </Card>
             </div>

@@ -61,7 +61,7 @@ function Chat() {
                     <CardContent>
                         <iframe
                             title="Google Drive Video"
-                            src="https://drive.google.com/file/d/1aLz7CNbgvJJsO6yoNN-eMb6wfP6T7o1k/preview"
+                            src=""
                             width="95%"
                             height="400px"
                             allow="autoplay"
