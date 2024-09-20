@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Button, Box, Drawer, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'; // Import the menu icon
+import { useNavigate } from 'react-router-dom';
 
 export function MainToolbar({ color }) {
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const navigate = useNavigate();
 
     // Toggle drawer open/close
     const toggleDrawer = () => {
@@ -19,9 +21,10 @@ export function MainToolbar({ color }) {
             onKeyDown={toggleDrawer}
         >
             <Typography variant="h6">Projects</Typography>
-            <Button color="inherit" sx={{ display: 'block', marginTop: 2 }}>Vision App</Button>
-            <Button color="inherit" sx={{ display: 'block', marginTop: 2 }}>Reg Quest</Button>
-            <Button color="inherit" sx={{ display: 'block', marginTop: 2 }}>Mern Chat</Button>
+            <Button onClick={() => navigate('/')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Home</Button>
+            <Button onClick={() => navigate('/Vision')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Vision App</Button>
+            <Button onClick={() => navigate('/RegQuest')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Reg Quest</Button>
+            <Button onClick={() => navigate('/Chat')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Mern Chat</Button>
         </Box>
     );
 

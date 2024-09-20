@@ -3,7 +3,9 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'; // Us
 import './App.css';
 import { Home } from './Home';
 import Websites from './Websites';
-
+import Chat from './Chat';
+import Vision from './Vision';
+import RegQuest from './RegQuest';
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/websites" element={<Websites />} />
+          <Route path="/vision" element={<Vision />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/regQuest" element={<RegQuest />} />
         </Routes>
       </Router>
     </div>
