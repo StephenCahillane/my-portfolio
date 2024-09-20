@@ -107,3 +107,29 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.appHeaderLeft {
+  width: 40%;
+  margin-right: 2em;
+}
+
+.appHeaderRight {
+  width: 40%;
+  margin-left: 2em;
+}
+
+.headerApp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.lowerApp {
+  background-color: #1c2027;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
