@@ -2,7 +2,8 @@ import React from 'react';
 import MainToolbar from './Toolbar';
 import { List, ListItem, ListItemText, ListItemIcon, Typography, Card, CardContent } from '@mui/material';
 import StarsIcon from '@mui/icons-material/Stars';
-
+import Future from './Future';
+import Tasks from './Tasks';
 
 function Vision() {
     return (
@@ -73,6 +74,8 @@ function Vision() {
                     </CardContent>
                 </Card>
             </div>
+
+            <Future />
 
         </>
     );

@@ -1,32 +1,64 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Box, Drawer, Typography } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Box, Drawer, Typography, List, ListItem, Collapse } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'; // Import the menu icon
 import { useNavigate } from 'react-router-dom';
 
+
+
+
 export function MainToolbar({ color }) {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const navigate = useNavigate();
+        const navigate = useNavigate();
 
     // Toggle drawer open/close
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
     };
+    
 
     // Define drawer content
     const drawerContent = (
         <Box
-            sx={{ width: 130, padding: 2}}
+            sx={{ width: 250, padding: 2 }} // Updated width for better layout
             role="presentation"
             onClick={toggleDrawer}
             onKeyDown={toggleDrawer}
         >
-            <Typography variant="h6">Projects</Typography>
-            <Button onClick={() => navigate('/')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Home</Button>
-            <Button onClick={() => navigate('/Vision')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Vision App</Button>
-            <Button onClick={() => navigate('/RegQuest')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Reg Quest</Button>
-            <Button onClick={() => navigate('/Chat')} color="inherit" sx={{ display: 'block', marginTop: 2 }}>Mern Chat</Button>
+            <Typography variant="h6" sx={{ marginBottom: 2 }}>Projects</Typography>
+
+            {/* List of items */}
+            <List>
+                {/* Home */}
+                <ListItem button onClick={() => navigate('/')}>
+                    Home
+                </ListItem>
+
+                {/* Vision App with Sub-Items */}
+                <ListItem button onClick={() => navigate('/Vision')}>
+                    Vision App
+                </ListItem>
+                <Box sx={{ paddingLeft: 4 }}>
+                    <ListItem button onClick={() => navigate('/Vision/Feature1')}>
+                        Feature 1
+                    </ListItem>
+                    <ListItem button onClick={() => navigate('/Vision/Feature2')}>
+                        Feature 2
+                    </ListItem>
+                </Box>
+
+                {/* Reg Quest */}
+                <ListItem button onClick={() => navigate('/RegQuest')}>
+                    Reg Quest
+                </ListItem>
+
+                {/* Mern Chat */}
+                <ListItem button onClick={() => navigate('/Chat')}>
+                    Mern Chat
+                </ListItem>
+            </List>
         </Box>
     );
+
 
     return (
         <div>
@@ -41,12 +73,12 @@ export function MainToolbar({ color }) {
                         sx={{ mr: 2 }}
                         onClick={toggleDrawer}
                     >
-                        <MenuIcon sx={{color: '#39FF14'}} />
+                        <MenuIcon sx={{ color: '#39FF14' }} />
                     </IconButton>
 
                     {/* Spacing and buttons */}
                     <Box sx={{ flexGrow: 1 }} /> {/* Pushes buttons to the far right */}
-                    
+
                     <Button
                         color="inherit"
                         sx={{
