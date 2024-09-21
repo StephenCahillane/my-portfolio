@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Box, Drawer, List, ListItem, Typography } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Box, Drawer, List, ListItem, Typography, ListItemIcon, Grid } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'; // Import the menu icon
 import { useNavigate } from 'react-router-dom';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
+
 
 export function MainToolbar({ color }) {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -15,49 +18,58 @@ export function MainToolbar({ color }) {
     // Define drawer content with custom styles for background and text color
     const drawerContent = (
         <Box
-            sx={{ 
-                width: 160, 
-                padding: 2, 
+            sx={{
+                width: 220,
+                padding: 1,
                 backgroundColor: '#1c2027', // Darker background color for sidebar
                 color: 'white' // Text color for better contrast
-            }} 
+            }}
             role="presentation"
             onClick={toggleDrawer}
             onKeyDown={toggleDrawer}
         >
-            <Typography variant="h6" sx={{ marginBottom: 2 }}>Projects</Typography>
+            <Typography variant="h6" sx={{ marginBottom: 1.5, mt: 2, fontFamily: 'Bebas Neue', color: '#39FF14', textAlign: 'center', fontSize: '28px' }}>Projects</Typography>
 
             {/* List of items */}
             <List>
                 {/* Home */}
-                <ListItem 
-                    button 
+                <ListItem
+                    button
                     onClick={() => navigate('/')}
                     sx={{
                         cursor: 'pointer',
                         '&:hover': {
                             backgroundColor: '#303030', // Darker shade on hover
                         },
+                        fontFamily: 'Bebas Neue',
+                        letterSpacing: '1px',
+                        fontSize: '22px',
+                        
                     }}
                 >
                     Home
                 </ListItem>
 
                 {/* Vision App with Sub-Items */}
-                <ListItem 
-                    button 
+                <ListItem
+                    button
                     onClick={() => navigate('/Vision')}
                     sx={{
                         cursor: 'pointer',
                         '&:hover': {
                             backgroundColor: '#303030', // Darker shade on hover
                         },
+                        fontFamily: 'Bebas Neue',
+                        letterSpacing: '1px',
+                        fontSize: '22px',
+                        
                     }}
                 >
                     Vision App
                 </ListItem>
-                <Box sx={{ paddingLeft: 2 }}>
-                    <ListItem
+                <Box sx={{ paddingLeft: 1 }}>
+
+                <ListItem
                         button
                         onClick={() => navigate('/Vision', { state: { section: 'future' } })}
                         sx={{
@@ -65,10 +77,19 @@ export function MainToolbar({ color }) {
                             '&:hover': {
                                 backgroundColor: '#303030', // Darker shade on hover
                             },
+                            fontFamily: 'Bebas Neue',
+                            letterSpacing: '1px',
+                            fontSize: '22px',
+                            
                         }}
                     >
-                        Future Builder
+                        <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
+                            <ChevronRightIcon />
+                        </ListItemIcon>
+                       Future Builder
                     </ListItem>
+
+
                     <ListItem
                         button
                         onClick={() => navigate('/Vision', { state: { section: 'tasks' } })}
@@ -77,10 +98,17 @@ export function MainToolbar({ color }) {
                             '&:hover': {
                                 backgroundColor: '#303030', // Darker shade on hover
                             },
+                            fontFamily: 'Bebas Neue',
+                            letterSpacing: '1px',
+                            fontSize: '22px'
                         }}
                     >
+                    <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
+                            <ChevronRightIcon />
+                        </ListItemIcon>
                         Task Manager
                     </ListItem>
+
                     <ListItem
                         button
                         onClick={() => navigate('/Vision', { state: { section: 'visionBoard' } })}
@@ -89,10 +117,17 @@ export function MainToolbar({ color }) {
                             '&:hover': {
                                 backgroundColor: '#303030', // Darker shade on hover
                             },
+                            fontFamily: 'Bebas Neue',
+                            letterSpacing: '1px',
+                            fontSize: '22px'
                         }}
                     >
+                    <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
+                            <ChevronRightIcon />
+                        </ListItemIcon>
                         Vision Board
                     </ListItem>
+
                     <ListItem
                         button
                         onClick={() => navigate('/Vision', { state: { section: 'studyCenter' } })}
@@ -101,10 +136,17 @@ export function MainToolbar({ color }) {
                             '&:hover': {
                                 backgroundColor: '#303030', // Darker shade on hover
                             },
+                            fontFamily: 'Bebas Neue',
+                            letterSpacing: '1px',
+                            fontSize: '22px'
                         }}
                     >
+                    <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
+                            <ChevronRightIcon />
+                        </ListItemIcon>
                         Study Centre
                     </ListItem>
+
                     <ListItem
                         button
                         onClick={() => navigate('/Vision', { state: { section: 'routine' } })}
@@ -113,19 +155,29 @@ export function MainToolbar({ color }) {
                             '&:hover': {
                                 backgroundColor: '#303030', // Darker shade on hover
                             },
+                            fontFamily: 'Bebas Neue',
+                            letterSpacing: '1px',
+                            fontSize: '22px'
                         }}
                     >
+                    <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
+                            <ChevronRightIcon />
+                        </ListItemIcon>
                         Daily Routine
                     </ListItem>
+
                 </Box>
-                <ListItem 
-                    button 
+                <ListItem
+                    button
                     onClick={() => navigate('/RegQuest')}
                     sx={{
                         cursor: 'pointer',
                         '&:hover': {
                             backgroundColor: '#303030', // Darker shade on hover
                         },
+                        fontFamily: 'Bebas Neue',
+                        letterSpacing: '1px',
+                        fontSize: '22px'
                     }}
                 >
                     Reg Quest
@@ -193,9 +245,9 @@ export function MainToolbar({ color }) {
             </AppBar>
 
             {/* Drawer with custom styles */}
-            <Drawer 
-                anchor="left" 
-                open={drawerOpen} 
+            <Drawer
+                anchor="left"
+                open={drawerOpen}
                 onClose={toggleDrawer}
                 PaperProps={{
                     sx: {
