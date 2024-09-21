@@ -82,7 +82,7 @@ body {
 .sitesPage {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* 2 columns of equal width */
-  gap: 20px; /* Space between grid items */
+  gap: 0px; /* Space between grid items */
   padding: 10px;
   justify-items: center; 
 }
@@ -153,4 +153,53 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.sitePanel {
+  display: flex;
+  width: 101%;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c2027;
+}
+
+.sitePanelLight {
+  display: flex;
+  width: 101%;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.sitesLeft{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sitesRight{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4em;
+  width: 50%;
+}
+
+.sitesLeftOpp{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4em;
+  width: 50%;
+}
+
+.sitesRightOpp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin-right: 2em;
+  margin-left: 1em;
 }

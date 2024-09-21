@@ -182,6 +182,21 @@ export function MainToolbar({ color }) {
                 >
                     Reg Quest
                 </ListItem>
+                <ListItem
+                    button
+                    onClick={() => navigate('/websites')}
+                    sx={{
+                        cursor: 'pointer',
+                        '&:hover': {
+                            backgroundColor: '#303030', // Darker shade on hover
+                        },
+                        fontFamily: 'Bebas Neue',
+                        letterSpacing: '1px',
+                        fontSize: '22px'
+                    }}
+                >
+                    Websites
+                </ListItem>
             </List>
         </Box>
     );
