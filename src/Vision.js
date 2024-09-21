@@ -4,6 +4,10 @@ import { List, ListItem, ListItemText, ListItemIcon, Typography, Card, CardConte
 import StarsIcon from '@mui/icons-material/Stars';
 import Future from './Future';
 import Tasks from './Tasks';
+import VisionBoard from './VisionBoard';
+import Study from './StudyCenter';
+import Routine from './Routine';
+
 
 function Vision() {
     return (
@@ -76,6 +80,10 @@ function Vision() {
             </div>
 
             <Future />
+            <Tasks />
+            <VisionBoard />
+            <Study />
+            <Routine />
 
         </>
     );
