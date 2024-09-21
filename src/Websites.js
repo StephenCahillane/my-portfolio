@@ -50,19 +50,19 @@ function Websites() {
                             >
                                 <div className='iconLogo'>
                                     <img src='zapier.png' alt='Zapier' />
-                                    <Typography sx={{ color: 'white' }}>Zapier</Typography>
+                                    <Typography sx={{ color: 'white', fontFamily: 'Bebas Neue', mt: 1, color: 'white' }}>Zapier</Typography>
                                 </div>
                                 <div className='iconLogo'>
                                     <img src='ghl.jpg' alt='GHL' style={{ width: '80px' }} />
-                                    <Typography sx={{ color: 'white' }}>GHL</Typography>
+                                    <Typography sx={{ color: 'white', fontFamily: 'Bebas Neue', mt: 1, color: 'white'  }}>GHL</Typography>
                                 </div>
                                 <div className='iconLogo'>
                                     <img src='stripe.png' alt='Stripe' style={{ width: '80px' }} />
-                                    <Typography sx={{ color: 'white' }}>Stripe</Typography>
+                                    <Typography sx={{ color: 'white', fontFamily: 'Bebas Neue', mt: 1, color: 'white' }}>Stripe</Typography>
                                 </div>
                                 <div className='iconLogo'>
                                     <img src='meta.png' alt='Meta API' style={{ width: '80px' }} />
-                                    <Typography sx={{ color: 'white' }}>Meta API</Typography>
+                                    <Typography sx={{ color: 'white', fontFamily: 'Bebas Neue', mt: 1, color: 'white' }}>Meta API</Typography>
                                 </div>
                             </div>
                         </CardContent>
@@ -70,7 +70,6 @@ function Websites() {
 
                 </div>
             </div>
-
 
 
             <div className='sitesPage'>
@@ -112,13 +111,13 @@ function Websites() {
 
 
                     <div className='sitesRight'>
-                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', border: '2px solid #39FF14' }}>
+                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)'}}>
                             <CardContent>
                                 <iframe
                                     title="Embedded Website"
                                     src="https://www.strength2heal.com/home-page"
                                     width="100%"
-                                    height="600"
+                                    height="500"
                                     style={{ border: 'none' }}
                                 />
                             </CardContent>
@@ -126,17 +125,16 @@ function Websites() {
                     </div>
                 </div>
 
-
                 <div className='sitePanelLight'>
                     
                     <div className='sitesRightOpp'>
-                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', border: '2px solid #39FF14' }}>
+                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)'}}>
                             <CardContent>
                                 <iframe
                                     title="Embedded Website"
                                     src="https://app.gohighlevel.com/v2/preview/DTl3QtUhfBBMvOJcGXlU"
                                     width="100%"
-                                    height="600"
+                                    height="500"
                                     style={{ border: 'none' }}
                                 />
                             </CardContent>
@@ -175,9 +173,6 @@ function Websites() {
                         </Button>
                     </div>
                 </div>
-
-
-
 
                 <div className='sitePanel'>
 
@@ -220,13 +215,13 @@ function Websites() {
                         </Button>
                     </div>
                     <div className='sitesRight'>
-                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', border: '2px solid #39FF14' }}>
+                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                             <CardContent>
                                 <iframe
                                     title="Embedded Website"
                                     src="https://onesourcebd.com/home-page"
                                     width="100%"
-                                    height="600"
+                                    height="500"
                                     style={{ border: 'none' }}
                                 />
                             </CardContent>
@@ -234,18 +229,16 @@ function Websites() {
                     </div>
                 </div>
 
-
-
                 <div className='sitePanelLight'>
                     
                     <div className='sitesRightOpp'>
-                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', border: '2px solid #39FF14' }}>
+                        <Card sx={{ width: '90%', mt: 5, mb: 5, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                             <CardContent>
                                 <iframe
                                     title="Embedded Website"
                                     src="https://app.gohighlevel.com/v2/preview/gMCtYVncCYHlXXVrBfUw"
                                     width="100%"
-                                    height="600"
+                                    height="500"
                                     style={{ border: 'none' }}
                                 />
                             </CardContent>

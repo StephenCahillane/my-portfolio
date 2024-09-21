@@ -149,22 +149,22 @@ const navigate = useNavigate();
     let newRotation = [...characterRotation];
 
     switch (event.key) {
-      case 'ArrowUp':
+      case 'w':
         newPosition[0] -= moveSpeed; // Move forward
         setCharacterRotation([0, -Math.PI / 2, 0]);
         setIsAnimating(true);
         break;
-      case 'ArrowDown':
+      case 's':
         newPosition[0] += moveSpeed; // Move backward
         setCharacterRotation([0, Math.PI / 2, 0]);
         setIsAnimating(true);
         break;
-      case 'ArrowLeft':
+      case 'a':
         newPosition[2] += moveSpeed; // Move left
         setCharacterRotation([0, 0, 0]);
         setIsAnimating(true);
         break;
-      case 'ArrowRight':
+      case 'd':
         newPosition[2] -= moveSpeed; // Move right
         setCharacterRotation([0, Math.PI, 0]);
         setIsAnimating(true);
@@ -177,7 +177,7 @@ const navigate = useNavigate();
   };
 
   const handleKeyUp = (event) => {
-    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+    if (['w', 's', 'a', 'd'].includes(event.key)) {
       setIsAnimating(false);
     }
   };
@@ -243,8 +243,6 @@ const navigate = useNavigate();
         <Card className='profileCard' sx={{ backgroundColor: '#3a3f48', mb: 3, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
           <CardContent>
             <TopToolbar color={'#3a3f48'} buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }} setter1={setShowInfoCard} setter2={setShowExpCard} setter3={setShowCVCard} />
-
-
 
             {showInfoCard &&
               <Card sx={{
@@ -584,8 +582,6 @@ const navigate = useNavigate();
               </Card>
             }
 
-
-
           </CardContent>
         </Card >
 
@@ -600,34 +596,34 @@ const navigate = useNavigate();
                   <ListItemIcon>
                     <MouseIcon sx={{ color: '#39FF14' }} />
                   </ListItemIcon>
-                  <ListItemText primary="Scroll" />
+                  <ListItemText primary="Zoom In & Out" />
                 </ListItem>
 
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon>
-                    <ArrowForwardIcon sx={{ color: '#39FF14' }} />
+                  <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                    W
                   </ListItemIcon>
                   <ListItemText primary="Move Forward" />
                 </ListItem>
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon>
-                    <ArrowBackIcon sx={{ color: '#39FF14' }} />
+                <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                    S
                   </ListItemIcon>
                   <ListItemText primary="Move Backward" />
                 </ListItem>
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon>
-                    <ArrowUpwardIcon sx={{ color: '#39FF14' }} />
+                <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                    A
                   </ListItemIcon>
                   <ListItemText primary="Move Up" />
                 </ListItem>
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon>
-                    <ArrowDownwardIcon sx={{ color: '#39FF14' }} />
+                <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                    D
                   </ListItemIcon>
                   <ListItemText primary="Move Down" />
                 </ListItem>
@@ -652,19 +648,19 @@ const navigate = useNavigate();
 
             {showMessage && (
               <Html position={[10, 55, 0]} center>
-                <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', fontStyle: 'italic' }}>
-                  Press 'e' to use Computer
+                <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', border: '1px solid white' }}>
+                 <Typography sx={{fontFamily: 'Bebas Neue'}}>'E' to use Computer</Typography> 
                 </div>
               </Html>
             )}
 
             {viewingComputer && (
               <Html position={[-130, 55, 10]} center>
-                <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', borderRadius: '5px', fontStyle: 'italic', width: '400px' }}>
-                  <p>Press 'f' to exit Computer</p>
-                  <p>Press 'L' for LinkedIn</p>
-                  <p>Press 'T' for Twitter</p>
-                  <p>Press 'Y' for YouTube</p>
+                <div style={{ color: 'white', borderRadius: '5px', width: '400px' }}>
+                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'f' to exit Computer</Typography>
+                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'L' for LinkedIn</Typography>
+                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'T' for Twitter</Typography>
+                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'Y' for YouTube</Typography>
                 </div>
               </Html>
             )}
