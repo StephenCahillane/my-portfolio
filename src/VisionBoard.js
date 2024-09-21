@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Card, CardContent } from '@mui/material';
 
 
 function VisionBoard() {
@@ -7,7 +7,8 @@ function VisionBoard() {
 
     return (
         <div>
-
+             <Card sx={{ backgroundColor: '#1c2027' }}>
+             <CardContent>
 
             <div className='headerApp'>
                 <div className='appHeaderLeft'>
@@ -33,6 +34,8 @@ function VisionBoard() {
 
                 </div>
             </div>
+            </CardContent>
+            </Card>
         </div>
     );
 }

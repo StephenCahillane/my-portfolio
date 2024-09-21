@@ -7,7 +7,7 @@ function Study() {
     return (
         <div>
 
-            <Card sx={{ backgroundColor: '#1c2027' }}>
+            <Card sx={{ backgroundColor: '#282c34' }}>
                 <CardContent>
                     <div className='headerAppDrk'>
                         <div className='appHeaderLeftDrk'>

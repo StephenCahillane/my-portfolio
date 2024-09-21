@@ -64,21 +64,6 @@ function Vision() {
                 </div>
             </div>
 
-            <div className='lowerApp'>
-                <Card sx={{ width: '80%', mt: 10, mb: 10, backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', border: '2px solid #39FF14' }}>
-                    <CardContent>
-
-                        <iframe
-                            title="Embedded Website"
-                            src="https://drive.google.com/file/d/1AExb6LYWBrkolJXyDrOee9Q_FJUhelUH/preview"
-                            width="95%"
-                            height='400px'
-                            style={{ border: 'none', display: 'block', margin: '0 auto' }}
-                        />
-                    </CardContent>
-                </Card>
-            </div>
-
             <Future />
             <Tasks />
             <VisionBoard />
