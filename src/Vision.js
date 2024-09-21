@@ -7,10 +7,53 @@ import Tasks from './Tasks';
 import VisionBoard from './VisionBoard';
 import Study from './StudyCenter';
 import Routine from './Routine';
-
+import { useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Vision() {
+
+    const location = useLocation();
+
+    // Create references for each section
+    const futureRef = useRef(null);
+    const tasksRef = useRef(null);
+    const visionBoardRef = useRef(null);
+    const studyRef = useRef(null);
+    const routineRef = useRef(null);
+
+    // Function to scroll to a specific section
+    const scrollToSection = (ref) => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // Check location state to scroll to the correct section after navigation
+    useEffect(() => {
+        if (location.state?.section) {
+            switch (location.state.section) {
+                case 'future':
+                    scrollToSection(futureRef);
+                    break;
+                case 'tasks':
+                    scrollToSection(tasksRef);
+                    break;
+                case 'visionBoard':
+                    scrollToSection(visionBoardRef);
+                    break;
+                case 'studyCenter':
+                    scrollToSection(studyRef);
+                    break;
+                case 'routine':
+                    scrollToSection(routineRef);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }, [location.state]);
+
+
     return (
+        
         <>
 
             <MainToolbar color={'#1c2027'} />
@@ -64,11 +107,21 @@ function Vision() {
                 </div>
             </div>
 
-            <Future />
-            <Tasks />
-            <VisionBoard />
-            <Study />
-            <Routine />
+            <div ref={futureRef}>
+                <Future />
+            </div>
+            <div ref={tasksRef}>
+                <Tasks />
+            </div>
+            <div ref={visionBoardRef}>
+                <VisionBoard />
+            </div>
+            <div ref={studyRef}>
+                <Study />
+            </div>
+            <div ref={routineRef}>
+                <Routine />
+            </div>
 
         </>
     );

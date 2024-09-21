@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Box, Drawer, Typography, List, ListItem, Collapse } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Box, Drawer, List, ListItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'; // Import the menu icon
 import { useNavigate } from 'react-router-dom';
 
-
-
-
 export function MainToolbar({ color }) {
     const [drawerOpen, setDrawerOpen] = useState(false);
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
     // Toggle drawer open/close
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
     };
-    
 
-    // Define drawer content
+    // Define drawer content with custom styles for background and text color
     const drawerContent = (
         <Box
-            sx={{ width: 250, padding: 2 }} // Updated width for better layout
+            sx={{ 
+                width: 160, 
+                padding: 2, 
+                backgroundColor: '#1c2027', // Darker background color for sidebar
+                color: 'white' // Text color for better contrast
+            }} 
             role="presentation"
             onClick={toggleDrawer}
             onKeyDown={toggleDrawer}
@@ -29,39 +30,113 @@ export function MainToolbar({ color }) {
             {/* List of items */}
             <List>
                 {/* Home */}
-                <ListItem button onClick={() => navigate('/')}>
+                <ListItem 
+                    button 
+                    onClick={() => navigate('/')}
+                    sx={{
+                        cursor: 'pointer',
+                        '&:hover': {
+                            backgroundColor: '#303030', // Darker shade on hover
+                        },
+                    }}
+                >
                     Home
                 </ListItem>
 
                 {/* Vision App with Sub-Items */}
-                <ListItem button onClick={() => navigate('/Vision')}>
+                <ListItem 
+                    button 
+                    onClick={() => navigate('/Vision')}
+                    sx={{
+                        cursor: 'pointer',
+                        '&:hover': {
+                            backgroundColor: '#303030', // Darker shade on hover
+                        },
+                    }}
+                >
                     Vision App
                 </ListItem>
-                <Box sx={{ paddingLeft: 4 }}>
-                    <ListItem button onClick={() => navigate('/Vision/Feature1')}>
-                        Feature 1
+                <Box sx={{ paddingLeft: 2 }}>
+                    <ListItem
+                        button
+                        onClick={() => navigate('/Vision', { state: { section: 'future' } })}
+                        sx={{
+                            cursor: 'pointer',
+                            '&:hover': {
+                                backgroundColor: '#303030', // Darker shade on hover
+                            },
+                        }}
+                    >
+                        Future Builder
                     </ListItem>
-                    <ListItem button onClick={() => navigate('/Vision/Feature2')}>
-                        Feature 2
+                    <ListItem
+                        button
+                        onClick={() => navigate('/Vision', { state: { section: 'tasks' } })}
+                        sx={{
+                            cursor: 'pointer',
+                            '&:hover': {
+                                backgroundColor: '#303030', // Darker shade on hover
+                            },
+                        }}
+                    >
+                        Task Manager
+                    </ListItem>
+                    <ListItem
+                        button
+                        onClick={() => navigate('/Vision', { state: { section: 'visionBoard' } })}
+                        sx={{
+                            cursor: 'pointer',
+                            '&:hover': {
+                                backgroundColor: '#303030', // Darker shade on hover
+                            },
+                        }}
+                    >
+                        Vision Board
+                    </ListItem>
+                    <ListItem
+                        button
+                        onClick={() => navigate('/Vision', { state: { section: 'studyCenter' } })}
+                        sx={{
+                            cursor: 'pointer',
+                            '&:hover': {
+                                backgroundColor: '#303030', // Darker shade on hover
+                            },
+                        }}
+                    >
+                        Study Centre
+                    </ListItem>
+                    <ListItem
+                        button
+                        onClick={() => navigate('/Vision', { state: { section: 'routine' } })}
+                        sx={{
+                            cursor: 'pointer',
+                            '&:hover': {
+                                backgroundColor: '#303030', // Darker shade on hover
+                            },
+                        }}
+                    >
+                        Daily Routine
                     </ListItem>
                 </Box>
-
-                {/* Reg Quest */}
-                <ListItem button onClick={() => navigate('/RegQuest')}>
+                <ListItem 
+                    button 
+                    onClick={() => navigate('/RegQuest')}
+                    sx={{
+                        cursor: 'pointer',
+                        '&:hover': {
+                            backgroundColor: '#303030', // Darker shade on hover
+                        },
+                    }}
+                >
                     Reg Quest
-                </ListItem>
-
-                {/* Mern Chat */}
-                <ListItem button onClick={() => navigate('/Chat')}>
-                    Mern Chat
                 </ListItem>
             </List>
         </Box>
     );
 
-
     return (
         <div>
+            {/* AppBar with the menu icon and buttons */}
             <AppBar position="static" sx={{ backgroundColor: color }}>
                 <Toolbar>
                     {/* Burger menu button */}
@@ -79,6 +154,7 @@ export function MainToolbar({ color }) {
                     {/* Spacing and buttons */}
                     <Box sx={{ flexGrow: 1 }} /> {/* Pushes buttons to the far right */}
 
+                    {/* Blog Button */}
                     <Button
                         color="inherit"
                         sx={{
@@ -88,14 +164,15 @@ export function MainToolbar({ color }) {
                             '&:hover': {
                                 borderColor: '#39FF14', // Border color on hover
                                 backgroundColor: 'rgba(57, 255, 20, 0.1)', // Light background on hover
-
                             },
                             ml: 1,
-                            mr: 1
+                            mr: 1,
                         }}
                     >
                         Blog
                     </Button>
+
+                    {/* Get In Touch Button */}
                     <Button
                         color="inherit"
                         sx={{
@@ -107,7 +184,7 @@ export function MainToolbar({ color }) {
                                 backgroundColor: 'rgba(57, 255, 20, 0.1)', // Light background on hover
                             },
                             ml: 1,
-                            mr: 1
+                            mr: 1,
                         }}
                     >
                         Get In Touch
@@ -115,8 +192,17 @@ export function MainToolbar({ color }) {
                 </Toolbar>
             </AppBar>
 
-            {/* Drawer */}
-            <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
+            {/* Drawer with custom styles */}
+            <Drawer 
+                anchor="left" 
+                open={drawerOpen} 
+                onClose={toggleDrawer}
+                PaperProps={{
+                    sx: {
+                        backgroundColor: '#1c2027', // Darker background color for the entire drawer
+                    },
+                }}
+            >
                 {drawerContent}
             </Drawer>
         </div>
