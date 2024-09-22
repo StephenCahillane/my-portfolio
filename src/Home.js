@@ -8,12 +8,8 @@ import { AnimatedCharacter } from './Character';
 import { Room } from './Room';
 import { Tween, Easing } from '@tweenjs/tween.js';  // Import tween for smooth camera transition
 import { view } from 'framer-motion/client';
-import { Card, CardContent, Typography, Button } from '@mui/material';
+import { Card, CardContent, Typography, Button, CircularProgress, Box } from '@mui/material';
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import MouseIcon from '@mui/icons-material/Mouse';
 import MainToolbar from './Toolbar';
 import Websites from './Websites';
@@ -58,7 +54,20 @@ export function Home() {
   const [showCVCard, setShowCVCard] = useState(false);
   //end of left hand states
 
-const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading (replace with actual loading logic if necessary)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); // Set loading to false after some time
+    }, 2000); // Adjust duration as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (roomRef.current && characterRef.current) {
@@ -226,10 +235,6 @@ const navigate = useNavigate();
       window.removeEventListener('keydown', handleFKeyDown);
     };
   }, [viewingComputer]);
-
-
-
-
 
 
 
@@ -565,7 +570,7 @@ const navigate = useNavigate();
                     <Button
                       variant="outlined"
                       sx={{
-                       
+
                         mt: 2,
                         color: '#39FF14',             // Change text color
                         borderColor: '#39FF14',       // Change border color
@@ -601,28 +606,28 @@ const navigate = useNavigate();
 
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
                     W
                   </ListItemIcon>
                   <ListItemText primary="Move Forward" />
                 </ListItem>
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
                     S
                   </ListItemIcon>
                   <ListItemText primary="Move Backward" />
                 </ListItem>
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
                     A
                   </ListItemIcon>
                   <ListItemText primary="Move Up" />
                 </ListItem>
 
                 <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                <ListItemIcon sx={{color: '#39FF14', ml: 0.75}}>
+                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
                     D
                   </ListItemIcon>
                   <ListItemText primary="Move Down" />
@@ -632,6 +637,28 @@ const navigate = useNavigate();
             </CardContent>
           </Card>
 
+
+          {loading && (
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '170vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                borderRadius: '10px'
+              }}
+            >
+            <div className='loadingScreen'>
+              <Typography sx={{color: 'white', textAlign: 'center', fontFamily: 'Bebas Neue', mb: 3, fontSize: '28px'}}>Loading 3D Model</Typography>
+              <CircularProgress sx={{ color: 'white' }} size={125} />
+            </div>
+            </Box>
+          )}
           <Canvas
             style={{
               width: '600px',
@@ -649,7 +676,7 @@ const navigate = useNavigate();
             {showMessage && (
               <Html position={[10, 55, 0]} center>
                 <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', border: '1px solid white' }}>
-                 <Typography sx={{fontFamily: 'Bebas Neue'}}>'E' to use Computer</Typography> 
+                  <Typography sx={{ fontFamily: 'Bebas Neue' }}>'E' to use Computer</Typography>
                 </div>
               </Html>
             )}
@@ -657,10 +684,10 @@ const navigate = useNavigate();
             {viewingComputer && (
               <Html position={[-130, 55, 10]} center>
                 <div style={{ color: 'white', borderRadius: '5px', width: '400px' }}>
-                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'f' to exit Computer</Typography>
-                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'L' for LinkedIn</Typography>
-                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'T' for Twitter</Typography>
-                  <Typography sx={{fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>Press 'Y' for YouTube</Typography>
+                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'f' to exit Computer</Typography>
+                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'L' for LinkedIn</Typography>
+                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'T' for Twitter</Typography>
+                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'Y' for YouTube</Typography>
                 </div>
               </Html>
             )}

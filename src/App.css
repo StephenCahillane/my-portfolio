@@ -203,3 +203,10 @@ body {
   margin-right: 2em;
   margin-left: 1em;
 }
+
+.loadingScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
