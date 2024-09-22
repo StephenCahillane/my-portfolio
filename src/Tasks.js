@@ -7,16 +7,18 @@ function Tasks() {
     return (
         <div>
 
-            <Card sx={{backgroundColor: '#282c34'}}>
+            <Card sx={{ backgroundColor: '#282c34' }}>
                 <CardContent>
                     <div className='headerAppDrk'>
                         <div className='appHeaderLeftDrk'>
-                        <iframe src="https://drive.google.com/file/d/1e0C39Vd5Q3Ue-vfxl5HvPUol8MHB7rdz/preview" 
-                        width="560" 
-                        height="315" 
-                        allow="autoplay"
-                        style={{border: 'none', outline: 'none'}}
-                        ></iframe>
+                            <iframe
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/iZqbf5mQxBk"
+                                allow="autoplay"
+                                style={{ border: 'none', outline: 'none' }}
+                                title="YouTube video"
+                            ></iframe>
 
                         </div>
 

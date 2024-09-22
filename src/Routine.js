@@ -21,19 +21,21 @@ function Routine() {
                         </div>
 
                         <div className='appHeaderRightDrk'>
-                            <iframe src="https://drive.google.com/file/d/1blyk3mtJCtByUqOZ-tCFEVB1n0zuQzU3/preview"
+                            <iframe
                                 width="560"
                                 height="315"
+                                src="https://www.youtube.com/embed/dOhnK2BSzbU"
                                 allow="autoplay"
                                 style={{ border: 'none', outline: 'none' }}
+                                title="YouTube video"
                             ></iframe>
                         </div>
 
                     </div>
-                    </CardContent>
-                    </Card>
-                </div>
-                );
+                </CardContent>
+            </Card>
+        </div>
+    );
 }
 
-                export default Routine;
+export default Routine;

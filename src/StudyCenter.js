@@ -11,11 +11,13 @@ function Study() {
                 <CardContent>
                     <div className='headerAppDrk'>
                         <div className='appHeaderLeftDrk'>
-                            <iframe src="https://drive.google.com/file/d/1R4jaj4VyhrVkwqVYGp2oUgwKJMmK0w0x/preview"
+                            <iframe
                                 width="560"
                                 height="315"
+                                src="https://www.youtube.com/embed/C8DlN5y-V7A"
                                 allow="autoplay"
                                 style={{ border: 'none', outline: 'none' }}
+                                title="YouTube video"
                             ></iframe>
                         </div>
 

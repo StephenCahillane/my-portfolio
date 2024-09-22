@@ -54,15 +54,15 @@ function RegQuest() {
             </div>
 
             <div className='lowerApp'>
-                <Card sx={{ width: '80%', mt: 10, mb: 10, backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', border: '2px solid #39FF14' }}>
+                <Card sx={{ width: '70%', mt: 10, mb: 10, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                     <CardContent>
 
                         <iframe
                             title="Embedded YouTube Video"
                             src="https://www.youtube.com/embed/R0ujZbNLKHY"
-                            width="95%"
+                            width="90%"
                             height="400px"
-                            style={{ border: 'none' }}
+                            style={{ border: 'none', display: 'block', margin: '0 auto' }}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
 

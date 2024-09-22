@@ -24,19 +24,22 @@ function Future() {
                         </div>
 
                         <div className='appHeaderRightDrk'>
-                            <iframe src="https://drive.google.com/file/d/1NRXyMRIjxw2Gj9tf0ayoQxJaxQ67X8qm/preview"
+                            <iframe
                                 width="560"
                                 height="315"
+                                src="https://www.youtube.com/embed/nBYNzh-33E4"
                                 allow="autoplay"
-                                style={{ border: 'none', outline: 'none' }}>
-                            </iframe>
+                                style={{ border: 'none', outline: 'none' }}
+                                title="YouTube video"
+                            ></iframe>
                         </div>
 
+
                     </div>
-                    </CardContent>
-                    </Card>
-                </div>
-                );
+                </CardContent>
+            </Card>
+        </div>
+    );
 }
 
-                export default Future;
+export default Future;
