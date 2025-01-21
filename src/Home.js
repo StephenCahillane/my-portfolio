@@ -2,7 +2,7 @@ import { Canvas, extend } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { useEffect, useState, useRef } from 'react';
 import { Box3, Vector3, LineSegments } from 'three';
-import ProfileToolbar from './TopToolbar';
+import ProfileToolbar from './ProfileToolbar';
 import { AnimatedCharacter } from './Character';
 import { Room } from './Room';
 import { Card, CardContent } from '@mui/material';
@@ -17,8 +17,6 @@ import LoadingBox from './Components/LoadingBox';
 import UseComputerMsg from './Components/UseConputerMsg';
 import ComputerDirectionScreen from './Components/ComputerDirectionScreen';
 import ComputerScreen from './Components/ComputerScreen';
-
-
 
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
