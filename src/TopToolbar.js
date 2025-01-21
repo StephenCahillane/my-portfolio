@@ -1,34 +1,26 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 
 
 
-export function TopToolbar({ color, buttons, setter1, setter2, setter3 }) {
+export function ProfileToolbar({ color, buttons, setter1, setter2 }) {
 
     const handleClick = () => {
         //show info card
         setter1(false);
         //show exp card
         setter2(true);
-        setter3(false);
+        
     };
 
     const handleAboutClick = () => {
         setter1(true);
         setter2(false);
-        setter3(false);
+        
     };
-
-    const handleCVClick = () => {
-        setter3(true);
-        setter1(false);
-        setter2(false);
-    };
-
 
     return (
         <div>
@@ -62,4 +54,4 @@ export function TopToolbar({ color, buttons, setter1, setter2, setter3 }) {
     );
 }
 
-export default TopToolbar;
+export default ProfileToolbar;
