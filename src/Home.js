@@ -14,7 +14,7 @@ import MouseIcon from '@mui/icons-material/Mouse';
 import MainToolbar from './Toolbar';
 import { useNavigate } from 'react-router-dom';
 import { CameraController, InitialCameraSetup } from './Components/CameraController';
-import { handleEKeyDown, handleFKeyDown, handleLKeyDown, handleTKeyDown, handleYKeyDown, handleKeyDown } from './Functions/KeydownFuncs';
+import { handleEKeyDown, handleFKeyDown, handleLKeyDown, handleTKeyDown, handleYKeyDown, handleKeyUp } from './Functions/KeydownFuncs';
 
 
 // Extend the LineSegments to work with React Three Fiber
@@ -86,8 +86,8 @@ export function Home() {
     window.addEventListener('keydown', handleYKeyDown(viewingComputer));
     window.addEventListener('keydown', handleTKeyDown(viewingComputer));
     window.addEventListener('keydown', handleLKeyDown(viewingComputer));
-    window.addEventListener('keydown', handleKeyDown(characterPosition, characterRotation, setCharacterPosition, ));
-    window.addEventListener('keyup', handleKeyUp);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp(setIsAnimating));
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
@@ -102,23 +102,38 @@ export function Home() {
 
 
 
+  const handleKeyDown = (event) => {
+    const moveSpeed = 1;
+    let newPosition = [...characterPosition];
+    let newRotation = [...characterRotation];
+        switch (event.key) {
+            case 'w':
+                newPosition[0] -= moveSpeed; // Move forward
+                setCharacterRotation([0, -Math.PI / 2, 0]);
+                setIsAnimating(true);
+                break;
+            case 's':
+                newPosition[0] += moveSpeed; // Move backward
+                setCharacterRotation([0, Math.PI / 2, 0]);
+                setIsAnimating(true);
+                break;
+            case 'a':
+                newPosition[2] += moveSpeed; // Move left
+                setCharacterRotation([0, 0, 0]);
+                setIsAnimating(true);
+                break;
+            case 'd':
+                newPosition[2] -= moveSpeed; // Move right
+                setCharacterRotation([0, Math.PI, 0]);
+                setIsAnimating(true);
+                break;
+            default:
+                break;
+        }
 
+        setCharacterPosition(newPosition);
+}
  
-
-
-
-
-
-
-  
-
-  const handleKeyUp = (event) => {
-    if (['w', 's', 'a', 'd'].includes(event.key)) {
-      setIsAnimating(false);
-    }
-  };
-
-
 
 
   useEffect(() => {

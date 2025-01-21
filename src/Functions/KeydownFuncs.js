@@ -47,38 +47,11 @@ export const handleYKeyDown = (viewingComputer) => {
     }
 };
 
-export const handleKeyDown = (characterPosition, characterRotation, setCharacterRotation, setIsAnimating, setCharacterPosition) => {
-    const moveSpeed = 1;
-    let newPosition = [...characterPosition];
-    let newRotation = [...characterRotation];
-
+export const handleKeyUp = (setIsAnimating) => {
     return (event) => {
-        switch (event.key) {
-            case 'w':
-                newPosition[0] -= moveSpeed; // Move forward
-                setCharacterRotation([0, -Math.PI / 2, 0]);
-                setIsAnimating(true);
-                break;
-            case 's':
-                newPosition[0] += moveSpeed; // Move backward
-                setCharacterRotation([0, Math.PI / 2, 0]);
-                setIsAnimating(true);
-                break;
-            case 'a':
-                newPosition[2] += moveSpeed; // Move left
-                setCharacterRotation([0, 0, 0]);
-                setIsAnimating(true);
-                break;
-            case 'd':
-                newPosition[2] -= moveSpeed; // Move right
-                setCharacterRotation([0, Math.PI, 0]);
-                setIsAnimating(true);
-                break;
-            default:
-                break;
-        }
-
-        setCharacterPosition(newPosition);
+        if (['w', 's', 'a', 'd'].includes(event.key)) {
+            setIsAnimating(false);
+          }
     }
+  };
 
-};
