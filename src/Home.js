@@ -10,12 +10,17 @@ import { Tween, Easing } from '@tweenjs/tween.js';  // Import tween for smooth c
 import { view } from 'framer-motion/client';
 import { Card, CardContent, Typography, Button, CircularProgress, Box } from '@mui/material';
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import MouseIcon from '@mui/icons-material/Mouse';
 import MainToolbar from './Toolbar';
 import { useNavigate } from 'react-router-dom';
 import { CameraController, InitialCameraSetup } from './Components/CameraController';
 import { handleEKeyDown, handleFKeyDown, handleLKeyDown, handleTKeyDown, handleYKeyDown, handleKeyUp } from './Functions/KeydownFuncs';
-
+import { profileCardStyle, canvasStyle } from './Styles/HomePageStyles';
+import InfoCard from './Components/InfoCard';
+import ExpCard from './Components/ExpCard';
+import ControlsCard from './Components/ControlsCard';
+import LoadingBox from './Components/LoadingBox';
+import UseComputerMsg from './Components/UseConputerMsg';
+import ComputerDirectionScreen from './Components/ComputerDirectionScreen';
 
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
@@ -41,14 +46,14 @@ export function Home() {
   const [showCVCard, setShowCVCard] = useState(false);
   //end of left hand states
 
-
+  const roomPosition = roomRef.current ? roomRef.current.position : new Vector3(0, 0, 0);
   const [loading, setLoading] = useState(true);
 
-  // Simulate loading (replace with actual loading logic if necessary)
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false after some time
-    }, 2000); // Adjust duration as needed
+      setLoading(false);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -106,34 +111,34 @@ export function Home() {
     const moveSpeed = 1;
     let newPosition = [...characterPosition];
     let newRotation = [...characterRotation];
-        switch (event.key) {
-            case 'w':
-                newPosition[0] -= moveSpeed; // Move forward
-                setCharacterRotation([0, -Math.PI / 2, 0]);
-                setIsAnimating(true);
-                break;
-            case 's':
-                newPosition[0] += moveSpeed; // Move backward
-                setCharacterRotation([0, Math.PI / 2, 0]);
-                setIsAnimating(true);
-                break;
-            case 'a':
-                newPosition[2] += moveSpeed; // Move left
-                setCharacterRotation([0, 0, 0]);
-                setIsAnimating(true);
-                break;
-            case 'd':
-                newPosition[2] -= moveSpeed; // Move right
-                setCharacterRotation([0, Math.PI, 0]);
-                setIsAnimating(true);
-                break;
-            default:
-                break;
-        }
+    switch (event.key) {
+      case 'w':
+        newPosition[0] -= moveSpeed; // Move forward
+        setCharacterRotation([0, -Math.PI / 2, 0]);
+        setIsAnimating(true);
+        break;
+      case 's':
+        newPosition[0] += moveSpeed; // Move backward
+        setCharacterRotation([0, Math.PI / 2, 0]);
+        setIsAnimating(true);
+        break;
+      case 'a':
+        newPosition[2] += moveSpeed; // Move left
+        setCharacterRotation([0, 0, 0]);
+        setIsAnimating(true);
+        break;
+      case 'd':
+        newPosition[2] -= moveSpeed; // Move right
+        setCharacterRotation([0, Math.PI, 0]);
+        setIsAnimating(true);
+        break;
+      default:
+        break;
+    }
 
-        setCharacterPosition(newPosition);
-}
- 
+    setCharacterPosition(newPosition);
+  }
+
 
 
   useEffect(() => {
@@ -149,370 +154,56 @@ export function Home() {
 
 
 
-  const roomPosition = roomRef.current ? roomRef.current.position : new Vector3(0, 0, 0);
+
 
   return (
     <>
       <MainToolbar color={'#1c2027'} />
 
       <div className='homePg'>
-        <Card className='profileCard' sx={{ backgroundColor: '#3a3f48', mb: 3, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+        <Card className='profileCard' sx={profileCardStyle}>
           <CardContent>
-            <TopToolbar color={'#3a3f48'} buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }} setter1={setShowInfoCard} setter2={setShowExpCard} setter3={setShowCVCard} />
+            <TopToolbar
+              color={'#3a3f48'}
+              buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }}
+              setter1={setShowInfoCard}
+              setter2={setShowExpCard}
+              setter3={setShowCVCard}
+            />
 
             {showInfoCard &&
-              <Card sx={{
-                width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
-                border: 'none',
-              }}>
-                <CardContent>
-                  <div className='headerAboutMe'>
-                    <div className='btn&info'>
-                      <Typography sx={{ color: 'white', maxWidth: '240px', mr: 0 }}>
-                        I'm <span style={{ color: '#39FF14', fontSize: '22px' }}>Stephen</span>, a Full Stack Java Developer. This portfolio has been built in React, Material UI, and React3Fiber.
-                      </Typography>
-                      <Button
-                        variant="outlined"
-                        sx={{
-                          ml: 6,
-                          mt: 2,
-                          color: '#39FF14',             // Change text color
-                          borderColor: '#39FF14',       // Change border color
-                          '&:hover': {
-                            borderColor: '#39FF14',     // Ensure border color changes on hover as well
-                            backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
-                          },
-                        }}
-                      >
-                        Contact
-                      </Button>
-                    </div>
-                    <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <img
-                        src='cutout-pic2.png'
-                        style={{ width: '100%', height: '175px', display: 'block', objectFit: 'cover' }}
-                        alt='Invalid Src'
-                      />
-                      <div
-                        style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '100%',
-                          backgroundColor: '#3a3f48',
-                          opacity: 0.3, // Adjust opacity to control the intensity of the overlay
-                          pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
-                    I am a passionate Full Stack Developer with <span style={{ color: '#39FF14' }}>two years of experience </span>specializing in Java, Spring, React, and web design languages.
-                    My journey in tech is complemented by a <span style={{ color: '#39FF14' }}>solid foundation in networking and cybersecurity, </span>
-                    ensuring a well-rounded approach to building secure and efficient applications.
-
-                    Before transitioning into the tech industry,
-                    I spent <span style={{ color: '#39FF14' }}>six years in the U.S. Air Force </span> as an Aircraft Mechanic. During this time,
-                    I developed a meticulous attention to detail and problem-solving skills.
-
-
-                    Now based in Ireland, I am eager to contribute to the local tech community by leveraging my diverse skill
-                    set to drive technological progress. My goal is to build <span style={{ color: '#39FF14' }}>sustainable and scalable code bases </span>
-                    that support innovation and efficiency in the Irish tech landscape.
-                  </Typography>
-
-                  <div className='skillCards'>
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <img src='icons8-react-80.png'></img>
-                        <Typography sx={{ color: 'white', textAlign: 'center' }}>ReactJS</Typography>
-                      </CardContent>
-                    </Card>
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <img src='icons8-java-80.png'></img>
-                        <Typography sx={{ color: 'white', textAlign: 'center' }}>Java</Typography>
-                      </CardContent>
-                    </Card>
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <img src='icons8-spring-boot-80.png'></img>
-                        <Typography sx={{ color: 'white', textAlign: 'center' }}>Spring</Typography>
-                      </CardContent>
-                    </Card>
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <img src='icons8-nodejs-80.png'></img>
-                        <Typography sx={{ color: 'white', textAlign: 'center' }}>NodeJS</Typography>
-                      </CardContent>
-                    </Card>
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <img src='icons8-express-js-80.png'></img>
-                        <Typography sx={{ color: 'white', textAlign: 'center' }}>ExpressJS</Typography>
-                      </CardContent>
-                    </Card>
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <img src='icons8-python-80.png'></img>
-                        <Typography sx={{ color: 'white', textAlign: 'center' }}>Python</Typography>
-                      </CardContent>
-                    </Card>
-
-
-
-                  </div>
-                </CardContent>
-              </Card>
+              <InfoCard />
             }
 
             {showExpCard &&
-              <Card sx={{
-                width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
-                border: 'none',
-              }}>
-                <CardContent>
-                  <div className='headerAboutMe'>
-                    <div className='btn&info'>
-                      <Typography sx={{ color: 'white', maxWidth: '240px', mr: 0 }}>
-                        I'm <span style={{ color: '#39FF14', fontSize: '22px' }}>Stephen</span>, a Full Stack Java Developer. This portfolio has been built in React, Material UI, and React3Fiber.
-                      </Typography>
-                      <Button
-                        variant="outlined"
-                        sx={{
-                          ml: 6,
-                          mt: 2,
-                          color: '#39FF14',             // Change text color
-                          borderColor: '#39FF14',       // Change border color
-                          '&:hover': {
-                            borderColor: '#39FF14',     // Ensure border color changes on hover as well
-                            backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
-                          },
-                        }}
-                      >
-                        Contact
-                      </Button>
-                    </div>
-                    <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <img
-                        src='cutout-pic2.png'
-                        style={{ width: '100%', height: '175px', display: 'block', objectFit: 'cover' }}
-                        alt='Invalid Src'
-                      />
-                      <div
-                        style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '100%',
-                          backgroundColor: '#3a3f48',
-                          opacity: 0.3, // Adjust opacity to control the intensity of the overlay
-                          pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
-                    <div style={{ textAlign: 'center', color: '#39FF14' }}>
-                      <span>Agency Admin, One Source ICT, June 2023 - Current</span>
-                    </div>
-
-                    <div className='paragraph'>
-                      <span style={{ fontSize: '12px' }}>Developed custom API integrations, linking GoHighLevel with other software solutions
-                        to streamline client operations and improve data flow.</span>
-                    </div>
-
-
-                    <div className='paragraph'>
-                      <span style={{ fontSize: '12px' }}>
-                        Implemented webhooks to automate customer notifications, connecting the client's e-commerce platform with
-                        their email marketing service, resulting in a 40% reduction in manual workload and improving order
-                        confirmation turnaround time by 30%.
-                      </span>
-                    </div>
-
-                    <div className='paragraph'>
-                      <span style={{ fontSize: '12px' }}>
-                        Built and customized client websites, including setting up backends with robust database connections and
-                        integrations, resulting in a 25% increase in client satisfaction and enabling seamless data management and
-                        retrieval.
-                      </span>
-                    </div>
-                  </Typography>
-
-                  <Typography sx={{ textAlign: 'center', color: '#39FF14', fontSize: '14px' }}>My Website Portfolio</Typography>
-
-
-                  <div className='webCards'>
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                        <CardContent>
-                          <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>Strength2Heal</Typography>
-                          <img
-                            src='https://assets.cdn.filesafe.space/pUoGUkj918EJf1mXFaIi/media/665cb33565b36f23aea6f299.png'
-                            alt='s2healLogo'
-                            style={{ height: '75px', width: '75px', display: 'block', margin: '0 auto' }}
-                          >
-                          </img>
-                        </CardContent>
-                      </Card>
-
-                    </Card>
-
-
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>Sugradh Creche</Typography>
-                        <img
-                          src='https://assets.cdn.filesafe.space/Qf6XLkEBnE5hoUBRyRIl/media/6669d33839eeea7e3f543934.jpeg'
-                          alt='s2healLogo'
-                          style={{ height: '75px', width: '120px', display: 'block', margin: '0 auto' }}
-                        >
-                        </img>
-                      </CardContent>
-                    </Card>
-
-
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>One Source Business Development</Typography>
-                        <img
-                          src='https://assets.cdn.filesafe.space/mxxrduzd8Qcju97pwUEN/media/6647f59e81d1c14ba9ac631d.jpeg'
-                          alt='s2healLogo'
-                          style={{ height: '75px', width: '120px', display: 'block', margin: '0 auto' }}
-                        >
-                        </img>
-                      </CardContent>
-                    </Card>
-
-                    <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                      <CardContent>
-                        <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>Profit Phantoms</Typography>
-                        <img
-                          src='https://assets.cdn.filesafe.space/kPSwaea4RBb8MhlP4TSu/media/66745ee962c064022eb279ad.png'
-                          alt='s2healLogo'
-                          style={{ height: '90px', width: '100px', display: 'block', margin: '0 auto' }}
-                        >
-                        </img>
-                      </CardContent>
-                    </Card>
-                  </div>
-
-                  
-
-                </CardContent>
-              </Card>
+              <ExpCard />
             }
-
-            
-
           </CardContent>
         </Card >
 
         <div className='rightSide'>
-
-          <Card sx={{ mb: 5, width: '100%', height: '450px', backgroundColor: '#3a3f48', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-            <CardContent>
-              <img src='logo-cropped.png' style={{ display: 'block', margin: '0 auto', height: '100px' }}></img>
-              <List sx={{ color: 'white', textAlign: 'left', mx: 'auto', maxWidth: '600px', mt: 2 }}>
-
-                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon>
-                    <MouseIcon sx={{ color: '#39FF14' }} />
-                  </ListItemIcon>
-                  <ListItemText primary="Zoom In & Out" />
-                </ListItem>
+          <ControlsCard />
+          {loading && 
+            <LoadingBox />
+          }
 
 
-                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
-                    W
-                  </ListItemIcon>
-                  <ListItemText primary="Move Forward" />
-                </ListItem>
 
-                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
-                    S
-                  </ListItemIcon>
-                  <ListItemText primary="Move Backward" />
-                </ListItem>
+          <Canvas style={canvasStyle} className="canvas">
 
-                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
-                    A
-                  </ListItemIcon>
-                  <ListItemText primary="Move Up" />
-                </ListItem>
-
-                <ListItem sx={{ backgroundColor: '#1c2027', border: '1px solid white', mt: 1 }}>
-                  <ListItemIcon sx={{ color: '#39FF14', ml: 0.75 }}>
-                    D
-                  </ListItemIcon>
-                  <ListItemText primary="Move Down" />
-                </ListItem>
-
-              </List>
-            </CardContent>
-          </Card>
-
-
-          {loading && (
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '170vh',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                borderRadius: '10px'
-              }}
-            >
-            <div className='loadingScreen'>
-              <Typography sx={{color: 'white', textAlign: 'center', fontFamily: 'Bebas Neue', mb: 3, fontSize: '28px'}}>Loading 3D Model</Typography>
-              <CircularProgress sx={{ color: 'white' }} size={125} />
-            </div>
-            </Box>
-          )}
-          <Canvas
-            style={{
-              width: '600px',
-              height: '400px',
-              borderRadius: '10px',
-            }}
-            className="canvas"
-          >
             <ambientLight intensity={10} color={'pink'} />
             <pointLight position={[10, 10, 10]} />
             <InitialCameraSetup />
 
             {controlsEnabled && <OrbitControls />}
 
-            {showMessage && (
-              <Html position={[10, 55, 0]} center>
-                <div style={{ color: 'white', background: 'rgba(0, 0, 0, 0.7)', padding: '10px', borderRadius: '5px', border: '1px solid white' }}>
-                  <Typography sx={{ fontFamily: 'Bebas Neue' }}>'E' to use Computer</Typography>
-                </div>
-              </Html>
-            )}
+            {showMessage && 
+              <UseComputerMsg />
+            }
 
-            {viewingComputer && (
-              <Html position={[-130, 55, 10]} center>
-                <div style={{ color: 'white', borderRadius: '5px', width: '400px' }}>
-                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'f' to exit Computer</Typography>
-                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'L' for LinkedIn</Typography>
-                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'T' for Twitter</Typography>
-                  <Typography sx={{ fontFamily: 'Bebas Neue', border: '1px solid white', mb: 1, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>Press 'Y' for YouTube</Typography>
-                </div>
-              </Html>
-            )}
+            {viewingComputer && 
+              <ComputerDirectionScreen />
+            }
 
             {viewingComputer && (
               <Html position={[-130, 14, -35]} center>
