@@ -12,27 +12,14 @@ import { Card, CardContent, Typography, Button, CircularProgress, Box } from '@m
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import MouseIcon from '@mui/icons-material/Mouse';
 import MainToolbar from './Toolbar';
-import Websites from './Websites';
 import { useNavigate } from 'react-router-dom';
-
-
+import { CameraController, InitialCameraSetup } from './Components/CameraController';
+import { handleEKeyDown, handleFKeyDown, handleLKeyDown, handleTKeyDown, handleYKeyDown, handleKeyDown } from './Functions/KeydownFuncs';
 
 
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
 
-
-const InitialCameraSetup = () => {
-  const { camera } = useThree();
-
-  useEffect(() => {
-    // Set the initial camera position and orientation
-    camera.position.set(30, 90, 50); // Example position
-    camera.lookAt(0, 0, 0); // Example target to look at
-  }, [camera]);
-
-  return null; // This component doesn't render anything
-};
 
 export function Home() {
   //3d model states
@@ -95,11 +82,11 @@ export function Home() {
     }
 
 
-    window.addEventListener('keydown', handleEKeyDown);
-    window.addEventListener('keydown', handleYKeyDown);
-    window.addEventListener('keydown', handleTKeyDown);
-    window.addEventListener('keydown', handleLKeyDown);
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleEKeyDown(showMessage, setMoveCamera, setControlsEnabled, setViewingComputer));
+    window.addEventListener('keydown', handleYKeyDown(viewingComputer));
+    window.addEventListener('keydown', handleTKeyDown(viewingComputer));
+    window.addEventListener('keydown', handleLKeyDown(viewingComputer));
+    window.addEventListener('keydown', handleKeyDown(characterPosition, characterRotation, setCharacterPosition, ));
     window.addEventListener('keyup', handleKeyUp);
 
     return () => {
@@ -112,78 +99,18 @@ export function Home() {
   }, [characterPosition]); // Ensure refs are included in the dependency array
 
 
-  const handleEKeyDown = (event) => {
-    if ((event.key === 'e' || event.key === 'E') && showMessage) {
-      console.log('The "E" key was pressed!');
-      setMoveCamera(true);  // Trigger camera movement
-      setControlsEnabled(false);  // Disable OrbitControls
-      setViewingComputer(true);
-    }
-  };
-
-  const handleFKeyDown = (event) => {
-    if ((event.key === 'f' || event.key === 'F') && viewingComputer) {
-      console.log('The "F" key was pressed!');
-      setControlsEnabled(true);
-      setViewingComputer(false);
-      setExitComputer(true);
-    }
-  };
-
-  const handleLKeyDown = (event) => {
-    if ((event.key === 'l' || event.key === 'L') && viewingComputer) {
-      console.log('The "L" key was pressed!');
-      window.open('https://www.linkedin.com/in/stephen-cahillane-68689b27b/', '_blank'); // Opens LinkedIn in a new tab
-    }
-  };
-
-  const handleTKeyDown = (event) => {
-    if ((event.key === 't' || event.key === 'T') && viewingComputer) {
-      console.log('The "L" key was pressed!');
-      window.open('https://x.com/Stephen_C_Tech', '_blank'); // Opens LinkedIn in a new tab
-    }
-  };
-
-  const handleYKeyDown = (event) => {
-    if ((event.key === 'y' || event.key === 'Y') && viewingComputer) {
-      console.log('The "L" key was pressed!');
-      window.open('https://www.youtube.com/@SteveHighLevel-gl8cf', '_blank'); // Opens LinkedIn in a new tab
-    }
-  };
 
 
-  const handleKeyDown = (event) => {
-    const moveSpeed = 1;
-    let newPosition = [...characterPosition];
-    let newRotation = [...characterRotation];
 
-    switch (event.key) {
-      case 'w':
-        newPosition[0] -= moveSpeed; // Move forward
-        setCharacterRotation([0, -Math.PI / 2, 0]);
-        setIsAnimating(true);
-        break;
-      case 's':
-        newPosition[0] += moveSpeed; // Move backward
-        setCharacterRotation([0, Math.PI / 2, 0]);
-        setIsAnimating(true);
-        break;
-      case 'a':
-        newPosition[2] += moveSpeed; // Move left
-        setCharacterRotation([0, 0, 0]);
-        setIsAnimating(true);
-        break;
-      case 'd':
-        newPosition[2] -= moveSpeed; // Move right
-        setCharacterRotation([0, Math.PI, 0]);
-        setIsAnimating(true);
-        break;
-      default:
-        break;
-    }
 
-    setCharacterPosition(newPosition);
-  };
+ 
+
+
+
+
+
+
+  
 
   const handleKeyUp = (event) => {
     if (['w', 's', 'a', 'd'].includes(event.key)) {
@@ -192,45 +119,14 @@ export function Home() {
   };
 
 
-  const CameraController = ({ targetPosition, moveCamera, setMoveCamera, exitComputer }) => {
-    const { camera } = useThree();
-    const cameraTarget = useRef(new Vector3());
 
-    useFrame(() => {
-      if (moveCamera && !exitComputer) {
-        // Define the target position for the camera
-        cameraTarget.current.set(-26.5, 24.5 + 20, -12.5);//-12.5
-
-        // Move the camera smoothly towards the target position
-        camera.position.lerp(cameraTarget.current, 0.05); // Adjust the speed by changing the 0.05 value
-
-        const lookAtTarget = new Vector3(-130, 15.5, 40); // Adjust the target to fit your scene
-        camera.lookAt(lookAtTarget);
-        // Check if the camera is close enough to the target
-        if (camera.position.distanceTo(cameraTarget.current) < 0.1) {
-          camera.position.copy(cameraTarget.current);  // Snap to target when close enough
-          setMoveCamera(false);  // Stop moving camera
-        }
-      }
-
-      if (exitComputer) {
-        console.log('exiting computer, ready to move cam');
-        camera.position.set(30, 90, 50);
-
-
-        setExitComputer(false);
-      }
-    });
-
-    return null;
-  };
 
   useEffect(() => {
     if (viewingComputer) {
       console.log('viewingComp:', viewingComputer);
     }
 
-    window.addEventListener('keydown', handleFKeyDown);
+    window.addEventListener('keydown', handleFKeyDown(setControlsEnabled, setViewingComputer, setExitComputer, viewingComputer));
     return () => {
       window.removeEventListener('keydown', handleFKeyDown);
     };
@@ -406,7 +302,7 @@ export function Home() {
 
                   <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
                     <div style={{ textAlign: 'center', color: '#39FF14' }}>
-                      <span>Embedded Software Developer, One Source ICT, June 2023 - Current</span>
+                      <span>Agency Admin, One Source ICT, June 2023 - Current</span>
                     </div>
 
                     <div className='paragraph'>
@@ -490,102 +386,13 @@ export function Home() {
                     </Card>
                   </div>
 
-                  <Button
-                    variant='outlined'
-                    sx={{
-                      display: 'block',
-                      margin: '0 auto',
-                      mt: 2,
-                      color: '#39FF14',        // Text color
-                      borderColor: '#39FF14',  // Border color
-                      '&:hover': {
-                        borderColor: '#39FF14',  // Keep the border color on hover
-                        backgroundColor: 'rgba(57, 255, 20, 0.1)' // Add a subtle background on hover (optional)
-                      }
-                    }}
-                    onClick={() => navigate('/websites')}
-                  >
-                    View Portfolio
-                  </Button>
+                  
 
                 </CardContent>
               </Card>
             }
 
-            {showCVCard &&
-              <Card sx={{
-                width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
-                border: 'none',
-              }}>
-                <CardContent>
-                  <div className='headerAboutMe'>
-                    <div className='btn&info'>
-                      <Typography sx={{ color: 'white', maxWidth: '240px', mr: 0 }}>
-                        I'm <span style={{ color: '#39FF14', fontSize: '22px' }}>Stephen</span>, a Full Stack Java Developer. This portfolio has been built in React, Material UI, and React3Fiber.
-                      </Typography>
-                      <Button
-                        variant="outlined"
-                        sx={{
-                          ml: 6,
-                          mt: 2,
-                          color: '#39FF14',             // Change text color
-                          borderColor: '#39FF14',       // Change border color
-                          '&:hover': {
-                            borderColor: '#39FF14',     // Ensure border color changes on hover as well
-                            backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
-                          },
-                        }}
-                      >
-                        Contact
-                      </Button>
-                    </div>
-                    <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <img
-                        src='cutout-pic2.png'
-                        style={{ width: '100%', height: '175px', display: 'block', objectFit: 'cover' }}
-                        alt='Invalid Src'
-                      />
-                      <div
-                        style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '100%',
-                          backgroundColor: '#3a3f48',
-                          opacity: 0.3, // Adjust opacity to control the intensity of the overlay
-                          pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
-                        }}
-                      />
-                    </div>
-                  </div>
-
-
-                  <div className='divider' style={{ display: 'block', margin: '0 auto', marginTop: '3em' }}></div>
-
-                  <div className='cv'>
-                    <img src='Cv1.PNG' style={{ width: '300px' }}></img>
-                    <img src='cv2.PNG' style={{ width: '300px', marginTop: 8 }}></img>
-
-                    <Button
-                      variant="outlined"
-                      sx={{
-
-                        mt: 2,
-                        color: '#39FF14',             // Change text color
-                        borderColor: '#39FF14',       // Change border color
-                        '&:hover': {
-                          borderColor: '#39FF14',     // Ensure border color changes on hover as well
-                          backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
-                        },
-                      }}
-                    >
-                      Download
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            }
+            
 
           </CardContent>
         </Card >
@@ -706,6 +513,7 @@ export function Home() {
               moveCamera={moveCamera}
               setMoveCamera={setMoveCamera}
               exitComputer={exitComputer}
+              setExitComputer={setExitComputer}
             />
 
             <Room ref={roomRef} />

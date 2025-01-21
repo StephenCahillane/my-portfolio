@@ -53,7 +53,7 @@ export function TopToolbar({ color, buttons, setter1, setter2, setter3 }) {
                     {buttons &&
                         <>
                             <Button color="inherit" onClick={() => handleClick()}>{buttons.label2}</Button>
-                            <Button color="inherit" onClick={() => handleCVClick()}>{buttons.label3}</Button>
+                        
                         </>
                     }
                 </Toolbar>
