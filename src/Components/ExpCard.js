@@ -1,56 +1,15 @@
 import React from 'react';
-import { Card, CardContent, Typography, Button } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
+import { infoCardStyle } from '../Styles/HomePageStyles';
+import HeaderAboutMe from './HeaderAboutMe';
 
 
 export const ExpCard = () => {    
     
     return (
-        <Card sx={{
-            width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
-            border: 'none',
-          }}>
+        <Card sx={infoCardStyle}>
             <CardContent>
-              <div className='headerAboutMe'>
-                <div className='btn&info'>
-                  <Typography sx={{ color: 'white', maxWidth: '240px', mr: 0 }}>
-                    I'm <span style={{ color: '#39FF14', fontSize: '22px' }}>Stephen</span>, a Full Stack Java Developer. This portfolio has been built in React, Material UI, and React3Fiber.
-                  </Typography>
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      ml: 6,
-                      mt: 2,
-                      color: '#39FF14',             // Change text color
-                      borderColor: '#39FF14',       // Change border color
-                      '&:hover': {
-                        borderColor: '#39FF14',     // Ensure border color changes on hover as well
-                        backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
-                      },
-                    }}
-                  >
-                    Contact
-                  </Button>
-                </div>
-                <div style={{ position: 'relative', display: 'inline-block' }}>
-                  <img
-                    src='cutout-pic2.png'
-                    style={{ width: '100%', height: '175px', display: 'block', objectFit: 'cover' }}
-                    alt='Invalid Src'
-                  />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      backgroundColor: '#3a3f48',
-                      opacity: 0.3, // Adjust opacity to control the intensity of the overlay
-                      pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
-                    }}
-                  />
-                </div>
-              </div>
+              <HeaderAboutMe />
 
               <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
                 <div style={{ textAlign: 'center', color: '#39FF14' }}>
@@ -137,9 +96,6 @@ export const ExpCard = () => {
                   </CardContent>
                 </Card>
               </div>
-
-
-
             </CardContent>
           </Card>
     );

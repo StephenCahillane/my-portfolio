@@ -10,6 +10,8 @@ import Tasks from './Tasks';
 import VisionBoard from './VisionBoard';
 import Routine from './Routine';
 import Future from './Future';
+import Budget from './Budget';
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/visionBoard" element={<VisionBoard />} />
           <Route path="/routine" element={<Routine />} />
           <Route path="/future" element={<Future />} />
+          <Route path="/Budget" element={<Budget />} />
         </Routes>
       </Router>
     </div>

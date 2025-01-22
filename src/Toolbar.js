@@ -108,13 +108,20 @@ export function MainToolbar({ color }) {
                     Reg Quest
                 </ListItem>
 
+                <ListItem
+                    button
+                    onClick={() => navigate('/Budget')}
+                    sx={toolBarStyle}
+                >
+                    Budget Tool
+                </ListItem>
+
             </List>
         </Box>
     );
 
     return (
         <div>
-            
             <AppBar position="static" sx={{ backgroundColor: color }}>
                 <Toolbar>
                     <IconButton
@@ -127,14 +134,14 @@ export function MainToolbar({ color }) {
                     >
                         <MenuIcon sx={{ color: '#39FF14' }} />
                     </IconButton>
+
+                    <Typography sx={{ color: '#39FF14', fontFamily: 'Dancing Script', fontSize: '26px', letterSpacing: '1px' }}>Projects</Typography>
                     <Box sx={{ flexGrow: 1 }} /> 
                     <Button color="inherit" sx={buttonToolBarStyle}>Blog</Button>
                     <Button color="inherit" sx={buttonToolBarStyle}>Get In Touch</Button>
 
                 </Toolbar>
             </AppBar>
-
-            
             <Drawer
                 anchor="left"
                 open={drawerOpen}

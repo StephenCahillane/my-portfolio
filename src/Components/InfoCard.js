@@ -1,56 +1,13 @@
 import React from 'react';
-import { Card, CardContent, Typography, Button } from '@mui/material';
-
-
+import { Card, CardContent, Typography } from '@mui/material';
+import { infoCardStyle, skillCardStyle, skillCardText } from '../Styles/HomePageStyles';
+import HeaderAboutMe from './HeaderAboutMe';
 
 export const InfoCard = () => {
     return (
-        <Card sx={{
-            width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
-            border: 'none',
-          }}>
+        <Card sx={ infoCardStyle }>
             <CardContent>
-              <div className='headerAboutMe'>
-                <div className='btn&info'>
-                  <Typography sx={{ color: 'white', maxWidth: '240px', mr: 0 }}>
-                    I'm <span style={{ color: '#39FF14', fontSize: '22px' }}>Stephen</span>, a Full Stack Java Developer. This portfolio has been built in React, Material UI, and React3Fiber.
-                  </Typography>
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      ml: 6,
-                      mt: 2,
-                      color: '#39FF14',             // Change text color
-                      borderColor: '#39FF14',       // Change border color
-                      '&:hover': {
-                        borderColor: '#39FF14',     // Ensure border color changes on hover as well
-                        backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
-                      },
-                    }}
-                  >
-                    Contact
-                  </Button>
-                </div>
-                <div style={{ position: 'relative', display: 'inline-block' }}>
-                  <img
-                    src='cutout-pic2.png'
-                    style={{ width: '100%', height: '175px', display: 'block', objectFit: 'cover' }}
-                    alt='Invalid Src'
-                  />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      backgroundColor: '#3a3f48',
-                      opacity: 0.3, // Adjust opacity to control the intensity of the overlay
-                      pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
-                    }}
-                  />
-                </div>
-              </div>
+              <HeaderAboutMe />
               <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
                 I am a passionate Full Stack Developer with <span style={{ color: '#39FF14' }}>two years of experience </span>specializing in Java, Spring, React, and web design languages.
                 My journey in tech is complemented by a <span style={{ color: '#39FF14' }}>solid foundation in networking and cybersecurity, </span>
@@ -67,44 +24,42 @@ export const InfoCard = () => {
               </Typography>
 
               <div className='skillCards'>
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={skillCardStyle}>
                   <CardContent>
-                    <img src='icons8-react-80.png'></img>
-                    <Typography sx={{ color: 'white', textAlign: 'center' }}>ReactJS</Typography>
+                    <img src='icons8-react-80.png' alt=''></img>
+                    <Typography sx={skillCardText}>ReactJS</Typography>
                   </CardContent>
                 </Card>
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={skillCardStyle}>
                   <CardContent>
-                    <img src='icons8-java-80.png'></img>
-                    <Typography sx={{ color: 'white', textAlign: 'center' }}>Java</Typography>
+                    <img src='icons8-java-80.png' alt=''></img>
+                    <Typography sx={skillCardText}>Java</Typography>
                   </CardContent>
                 </Card>
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={skillCardStyle}>
                   <CardContent>
-                    <img src='icons8-spring-boot-80.png'></img>
-                    <Typography sx={{ color: 'white', textAlign: 'center' }}>Spring</Typography>
+                    <img src='icons8-spring-boot-80.png' alt=''></img>
+                    <Typography sx={skillCardText}>Spring</Typography>
                   </CardContent>
                 </Card>
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={skillCardStyle}>
                   <CardContent>
-                    <img src='icons8-nodejs-80.png'></img>
-                    <Typography sx={{ color: 'white', textAlign: 'center' }}>NodeJS</Typography>
+                    <img src='icons8-nodejs-80.png' alt=''></img>
+                    <Typography sx={skillCardText}>NodeJS</Typography>
                   </CardContent>
                 </Card>
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={skillCardStyle}>
                   <CardContent>
-                    <img src='icons8-express-js-80.png'></img>
-                    <Typography sx={{ color: 'white', textAlign: 'center' }}>ExpressJS</Typography>
+                    <img src='icons8-express-js-80.png' alt=''></img>
+                    <Typography sx={skillCardText}>ExpressJS</Typography>
                   </CardContent>
                 </Card>
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={skillCardStyle}>
                   <CardContent>
-                    <img src='icons8-python-80.png'></img>
-                    <Typography sx={{ color: 'white', textAlign: 'center' }}>Python</Typography>
+                    <img src='icons8-python-80.png' alt=''></img>
+                    <Typography sx={skillCardText}>Python</Typography>
                   </CardContent>
                 </Card>
-
-
 
               </div>
             </CardContent>

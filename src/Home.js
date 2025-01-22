@@ -17,7 +17,7 @@ import LoadingBox from './Components/LoadingBox';
 import UseComputerMsg from './Components/UseConputerMsg';
 import ComputerDirectionScreen from './Components/ComputerDirectionScreen';
 import ComputerScreen from './Components/ComputerScreen';
-
+import EduCard from './Components/EduCard';
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
 
@@ -37,7 +37,7 @@ export function Home() {
   const [showExpCard, setShowExpCard] = useState(false);
   const roomPosition = roomRef.current ? roomRef.current.position : new Vector3(0, 0, 0);
   const [loading, setLoading] = useState(true);
-
+  const [showEduCard, setShowEduCard] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -141,21 +141,22 @@ export function Home() {
           <CardContent>
 
             <ProfileToolbar
-              color={'#3a3f48'}
+              color={'#1c2027'}
               buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }}
               setter1={setShowInfoCard}
               setter2={setShowExpCard}
+              setter3={setShowEduCard}
             />
 
-            {showInfoCard && <InfoCard /> }
-            {showExpCard && <ExpCard /> }
-
+            {showInfoCard && <InfoCard />}
+            {showExpCard && <ExpCard />}
+            {showEduCard && <EduCard />}
           </CardContent>
         </Card >
 
         <div className='rightSide'>
           <ControlsCard />
-          { loading && <LoadingBox /> }
+          {loading && <LoadingBox />}
           <Canvas style={canvasStyle} className="canvas">
             <ambientLight intensity={10} color={'pink'} />
             <pointLight position={[10, 10, 10]} />

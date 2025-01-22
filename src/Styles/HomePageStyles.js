@@ -40,3 +40,38 @@ export const drawerContentBox = {
 export const projectHeader = {
      marginBottom: 1.5, mt: 2, fontFamily: 'Bebas Neue', color: '#39FF14', textAlign: 'center', fontSize: '28px' 
 }
+
+export const infoCardStyle = {
+    width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
+    border: 'none',
+}
+
+export const buttonContact = {
+        ml: 6,
+        mt: 2,
+        color: '#39FF14',             // Change text color
+        borderColor: '#39FF14',       // Change border color
+        '&:hover': {
+          borderColor: '#39FF14',     // Ensure border color changes on hover as well
+          backgroundColor: 'rgba(57, 255, 20, 0.1)', // Optional: adds a light background color on hover
+        },
+}
+
+export const infodiv ={
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#3a3f48',
+        opacity: 0.3, // Adjust opacity to control the intensity of the overlay
+        pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
+}
+
+export const skillCardStyle = {
+     backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' 
+}
+
+export const skillCardText = {
+    textAlign: 'center', color: 'white', mt: 0.5
+}
