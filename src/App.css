@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #282c34;
+  background-color: rgb(40,40,40);
 }
 
 .canvas {
@@ -17,14 +17,13 @@ body {
   width: 98%;
   display: flex;
   margin: 0 auto;
-  margin-top: 5em;
+  margin-top: 3em;
   align-items: center;
   justify-content: center;
 }
 
 .profileCard {
-  width: 500px;
-  
+  width: 650px;
 }
 
 .headerAboutMe {
@@ -58,6 +57,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-left: 6em;
+  margin-bottom: 1em;
 }
 
 .paragraph {

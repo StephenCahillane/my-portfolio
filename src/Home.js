@@ -136,10 +136,8 @@ export function Home() {
       <MainToolbar color={'#1c2027'} />
 
       <div className='home-page'>
-
         <Card className='profileCard' sx={profileCardStyle}>
           <CardContent>
-
             <ProfileToolbar
               color={'#1c2027'}
               buttons={{ label: 'About Me', label2: 'Experience', label3: 'CV' }}

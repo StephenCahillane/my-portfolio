@@ -1,11 +1,12 @@
 export const profileCardStyle = {
-    backgroundColor: '#3a3f48', mb: 3, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)'
+    backgroundColor: 'rgb(30,30,30)', mb: 3, boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)'
 }
 
 export const canvasStyle = {
     width: '600px',
-    height: '400px',
+    height: '500px',
     borderRadius: '10px',
+    
 }
 
 export const toolBarStyle = {
@@ -31,9 +32,9 @@ export const buttonToolBarStyle = {
 }
 
 export const drawerContentBox = {
-        width: 220,
+        width: 180,
         padding: 1,
-        backgroundColor: '#1c2027', // Darker background color for sidebar
+        backgroundColor: 'rgb(20,20,20)', // Darker background color for sidebar
         color: 'white' // Text color for better contrast
 }
 
@@ -42,7 +43,7 @@ export const projectHeader = {
 }
 
 export const infoCardStyle = {
-    width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: '#3a3f48', boxShadow: 'none', // Removes the shadow
+    width: '100%', display: 'block', margin: '0 auto', mt: 1, backgroundColor: 'rgb(30,30,30)', boxShadow: 'none', // Removes the shadow
     border: 'none',
 }
 
@@ -63,15 +64,17 @@ export const infodiv ={
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: '#3a3f48',
+        backgroundColor: 'rgb(30,30,30)',
         opacity: 0.3, // Adjust opacity to control the intensity of the overlay
         pointerEvents: 'none', // Ensure the overlay does not block interactions with the image
 }
 
 export const skillCardStyle = {
-     backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' 
+     backgroundColor: 'rgb(20,20,20)', 
+     boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+     
 }
 
 export const skillCardText = {
-    textAlign: 'center', color: 'white', mt: 0.5
+    textAlign: 'center', color: 'white', mt: 1
 }

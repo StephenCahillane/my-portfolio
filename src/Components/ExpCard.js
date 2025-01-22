@@ -44,7 +44,7 @@ export const ExpCard = () => {
 
               <div className='webCards'>
                 <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
-                  <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                  <Card sx={{ backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                     <CardContent>
                       <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>Strength2Heal</Typography>
                       <img
@@ -59,7 +59,7 @@ export const ExpCard = () => {
                 </Card>
 
 
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={{ backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                   <CardContent>
                     <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>Sugradh Creche</Typography>
                     <img
@@ -72,7 +72,7 @@ export const ExpCard = () => {
                 </Card>
 
 
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={{ backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                   <CardContent>
                     <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>One Source Business Development</Typography>
                     <img
@@ -84,7 +84,7 @@ export const ExpCard = () => {
                   </CardContent>
                 </Card>
 
-                <Card sx={{ backgroundColor: '#1c2027', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={{ backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                   <CardContent>
                     <Typography sx={{ color: 'white', textAlign: 'center', fontSize: '12px', mb: 2 }}>Profit Phantoms</Typography>
                     <img

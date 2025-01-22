@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Box, Drawer, List, ListItem, Typography, ListItemIcon } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Box, Drawer, List, ListItem, Typography, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -30,7 +30,7 @@ export function MainToolbar({ color }) {
                     onClick={() => navigate('/')}
                     sx={toolBarStyle}
                 >
-                    Home
+                    <ListItemText primary='Home' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
                 </ListItem>
 
 
@@ -39,19 +39,18 @@ export function MainToolbar({ color }) {
                     onClick={() => navigate('/Vision')}
                     sx={toolBarStyle}
                 >
-                    Vision App
+                    <ListItemText primary='Vision App' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
                 </ListItem>
-                <Box sx={{ paddingLeft: 1 }}>
+                <Box sx={{ paddingLeft: 0.0 }}>
 
                     <ListItem
                         button
                         onClick={() => navigate('/Vision', { state: { section: 'future' } })}
                         sx={toolBarStyle}
                     >
-                        <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
-                            <ChevronRightIcon />
-                        </ListItemIcon>
-                        Future Builder
+                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
+                        <ListItemText primary='Planner' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
                     </ListItem>
 
 
@@ -60,10 +59,8 @@ export function MainToolbar({ color }) {
                         onClick={() => navigate('/Vision', { state: { section: 'tasks' } })}
                         sx={toolBarStyle}
                     >
-                        <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
-                            <ChevronRightIcon />
-                        </ListItemIcon>
-                        Task Manager
+                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
+                        <ListItemText primary='Tasks' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
                     </ListItem>
 
                     <ListItem
@@ -71,10 +68,10 @@ export function MainToolbar({ color }) {
                         onClick={() => navigate('/Vision', { state: { section: 'visionBoard' } })}
                         sx={toolBarStyle}
                     >
-                        <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}>
-                            <ChevronRightIcon />
-                        </ListItemIcon>
-                        Vision Board
+
+                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
+                        <ListItemText primary='Visionboard' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
                     </ListItem>
 
                     <ListItem
@@ -82,10 +79,9 @@ export function MainToolbar({ color }) {
                         onClick={() => navigate('/Vision', { state: { section: 'studyCenter' } })}
                         sx={toolBarStyle}
                     >
-                        <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}>
-                            <ChevronRightIcon />
-                        </ListItemIcon>
-                        Study Centre
+                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
+                        <ListItemText primary='Study Center' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
                     </ListItem>
 
                     <ListItem
@@ -93,10 +89,10 @@ export function MainToolbar({ color }) {
                         onClick={() => navigate('/Vision', { state: { section: 'routine' } })}
                         sx={toolBarStyle}
                     >
-                        <ListItemIcon sx={{ color: '#39FF14', ml: 0, padding: 0 }}> {/* Optional: change icon color */}
-                            <ChevronRightIcon />
-                        </ListItemIcon>
-                        Daily Routine
+                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
+                        <ListItemText primary='Routine' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
+
                     </ListItem>
 
                 </Box>
@@ -105,7 +101,8 @@ export function MainToolbar({ color }) {
                     onClick={() => navigate('/RegQuest')}
                     sx={toolBarStyle}
                 >
-                    Reg Quest
+                    <ListItemText primary='RegQuest' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
                 </ListItem>
 
                 <ListItem
@@ -113,7 +110,8 @@ export function MainToolbar({ color }) {
                     onClick={() => navigate('/Budget')}
                     sx={toolBarStyle}
                 >
-                    Budget Tool
+                    <ListItemText primary='Budget Tool' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
                 </ListItem>
 
             </List>
@@ -122,7 +120,7 @@ export function MainToolbar({ color }) {
 
     return (
         <div>
-            <AppBar position="static" sx={{ backgroundColor: color }}>
+            <AppBar position="static" sx={{ backgroundColor: 'rgb(30,30,30)' }}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -136,7 +134,7 @@ export function MainToolbar({ color }) {
                     </IconButton>
 
                     <Typography sx={{ color: '#39FF14', fontFamily: 'Dancing Script', fontSize: '26px', letterSpacing: '1px' }}>Projects</Typography>
-                    <Box sx={{ flexGrow: 1 }} /> 
+                    <Box sx={{ flexGrow: 1 }} />
                     <Button color="inherit" sx={buttonToolBarStyle}>Blog</Button>
                     <Button color="inherit" sx={buttonToolBarStyle}>Get In Touch</Button>
 
@@ -148,7 +146,7 @@ export function MainToolbar({ color }) {
                 onClose={toggleDrawer}
                 PaperProps={{
                     sx: {
-                        backgroundColor: '#1c2027',
+                        backgroundColor: 'rgb(20,20,20)',
                     },
                 }}
             >
