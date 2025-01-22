@@ -67,7 +67,7 @@ const Budget = () => {
             <div className='lowerApp'>
                 <Card sx={{ width: '70%', mt: 10, mb: 10, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', position: 'relative' }}>
                     <div 
-                    onClick={() => window.location.href = 'https://www.google.com'}
+                    onClick={() => window.location.href = 'https://sjcahillane-budget-tool.onrender.com'}
                     style={{
                         position: 'absolute',
                         top: 0,
@@ -87,7 +87,7 @@ const Budget = () => {
                     <CardContent>
                         <iframe
                             title="Embedded YouTube Video"
-                            src="https://www.youtube.com/embed/R0ujZbNLKHY"
+                            src="https://www.youtube.com/embed/tToODS_R7rI"
                             width="100%"
                             height="400px"
                             style={{ border: 'none', margin: '0 auto' }}

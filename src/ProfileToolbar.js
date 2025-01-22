@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 
 export function ProfileToolbar({ color, buttons, setter1, setter2, setter3 }) {
 
@@ -23,18 +24,19 @@ export function ProfileToolbar({ color, buttons, setter1, setter2, setter3 }) {
 
     return (
         <div>
-            <AppBar position="static" sx={{ backgroundColor: color }}>
+            <AppBar position="static" sx={{ backgroundColor: 'transparent' }}>
                 <Toolbar>
                     {buttons &&
                         <>
-                            <Button onClick={() => handleClick('About')} sx={{ color: 'white', fontSize: '18px', mr: 16,  }}>
-                                {buttons.label}
+                            <Button onClick={() => handleClick('About')} sx={{ color: 'white', fontSize: '18px', mr: 16, }}>
+                                About
                             </Button>
-                            <Button onClick={() => handleClick('Exp')} sx={{color: '#39FF14', fontFamily: 'Dancing Script', mr: 4}}>
-                                Experience
+                            <Button onClick={() => handleClick('Exp')} sx={{ mr: 3 }}>
+                                <Typography sx={{ color: '#39FF14', fontFamily: 'Dancing Script', textTransform: 'none', fontSize: '24px' }}>Experience</Typography>
                             </Button>
-                            <Button onClick={() => handleClick('Education')} sx={{color: '#39FF14', fontFamily: 'Dancing Script'}}>
-                                Education
+                            <Button onClick={() => handleClick('Education')} sx={{ color: '#39FF14', fontFamily: 'Dancing Script' }}>
+                                <Typography sx={{ color: '#39FF14', fontFamily: 'Dancing Script', textTransform: 'none', fontSize: '24px' }}>Education</Typography>
+
                             </Button>
                         </>
                     }
