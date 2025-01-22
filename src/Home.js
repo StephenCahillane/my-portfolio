@@ -18,6 +18,10 @@ import UseComputerMsg from './Components/UseConputerMsg';
 import ComputerDirectionScreen from './Components/ComputerDirectionScreen';
 import ComputerScreen from './Components/ComputerScreen';
 import EduCard from './Components/EduCard';
+import UpdateCard from './Components/UpdateCard';
+
+
+
 // Extend the LineSegments to work with React Three Fiber
 extend({ LineSegments });
 
@@ -38,6 +42,8 @@ export function Home() {
   const roomPosition = roomRef.current ? roomRef.current.position : new Vector3(0, 0, 0);
   const [loading, setLoading] = useState(true);
   const [showEduCard, setShowEduCard] = useState(false);
+  const [showUpdateCard, setShowUpdateCard] = useState(false);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -144,11 +150,13 @@ export function Home() {
               setter1={setShowInfoCard}
               setter2={setShowExpCard}
               setter3={setShowEduCard}
+              setter4={setShowUpdateCard}
             />
 
             {showInfoCard && <InfoCard />}
             {showExpCard && <ExpCard />}
             {showEduCard && <EduCard />}
+            {showUpdateCard && <UpdateCard />}
           </CardContent>
         </Card >
 

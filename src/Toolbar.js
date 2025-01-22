@@ -36,6 +36,26 @@ export function MainToolbar({ color }) {
 
                 <ListItem
                     button
+                    onClick={() => navigate('/Budget')}
+                    sx={toolBarStyle}
+                >
+                    <ListItemText primary='Budget Tool' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
+                </ListItem>
+                
+                <ListItem
+                    button
+                    onClick={() => navigate('/RegQuest')}
+                    sx={toolBarStyle}
+                >
+                    <ListItemText primary='RegQuest' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
+                </ListItem>
+
+                
+
+                <ListItem
+                    button
                     onClick={() => navigate('/Vision')}
                     sx={toolBarStyle}
                 >
@@ -96,23 +116,7 @@ export function MainToolbar({ color }) {
                     </ListItem>
 
                 </Box>
-                <ListItem
-                    button
-                    onClick={() => navigate('/RegQuest')}
-                    sx={toolBarStyle}
-                >
-                    <ListItemText primary='RegQuest' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
-                </ListItem>
-
-                <ListItem
-                    button
-                    onClick={() => navigate('/Budget')}
-                    sx={toolBarStyle}
-                >
-                    <ListItemText primary='Budget Tool' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
-                </ListItem>
+                
 
             </List>
         </Box>
