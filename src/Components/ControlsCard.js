@@ -9,7 +9,10 @@ import MouseIcon from '@mui/icons-material/Mouse';
     
     
     return (
-        <Card sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 5, width: '100%', height: '320px', backgroundColor: 'rgb(30,30,30)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+        <Card 
+        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 5, width: '100%', height: '320px', backgroundColor: 'rgb(30,30,30)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}
+        className='controls-card'
+        >
             <CardContent>
               <List sx={{ color: 'white', textAlign: 'left', mx: 'auto', maxWidth: '600px' }}>
 

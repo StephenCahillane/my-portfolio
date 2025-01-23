@@ -35,27 +35,27 @@ const TeamApp = () => {
                     </Typography>
 
                     <List>
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Join a team of aspiring programmers with the same goal.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Receive guidance from a mentor, and attend weekly classes with your mentor.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Real time chat with your fellow team members, powered by Socket.io' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Mentor Dashboard to view member task progress, study times and schedule events.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Ranking system to receive rewards for completing daily tasks, study times. ' />
                         </ListItem>

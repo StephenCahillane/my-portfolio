@@ -35,27 +35,27 @@ function RegQuest() {
                     </Typography>
 
                     <List>
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Solve RegEx Problems to escape traps.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Moveable character with animations in a cartoon environment.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Checking Algorithm built to match user input with RegEx Password to escape trap.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Basic RegEx lessons to tutor users.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Participated in daily scrum meetings, stand ups and operated
                             in an agile environment.' />

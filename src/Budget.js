@@ -35,27 +35,27 @@ const Budget = () => {
                     </Typography>
 
                     <List>
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Set categories of spending and track areas needed to work on.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Set a budget, and log each days spending.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Daily, weekly, monthly and yearly totals in amount saved and spent.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Utilize charts and graphs to visualize progress.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Email updates on user savings and spending for accountability.' />
                         </ListItem>

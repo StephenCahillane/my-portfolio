@@ -72,32 +72,32 @@ function Vision() {
                     </Typography>
 
                     <List>
-                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Track Daily Tasks and receive Email notification' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Design a Vision Board with Image and Text, draggable and resizable.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Set a daily Routine and mark complete to track progress.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Set weekly and daily study goals, and track progress.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Set a purpose statement, and track through a roadmap and separate goals.' />
                         </ListItem>
 
-                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }}>
+                        <ListItem sx={{ backgroundColor: '#1c2027', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
                             <ListItemText sx={{ color: 'white' }} primary='Set Goals, add milestones, and visualize your progress towards
                     goals.' />

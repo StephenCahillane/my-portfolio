@@ -4,6 +4,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { buttonToolBarStyle, drawerContentBox, projectHeader, toolBarStyle } from './Styles/HomePageStyles';
+import { ButtonGroup } from '@mui/material';
+import { Facebook, Twitter, LinkedIn, Instagram } from '@mui/icons-material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 export function MainToolbar({ color }) {
@@ -123,7 +126,7 @@ export function MainToolbar({ color }) {
                     </ListItem>
 
                 </Box>
-                
+
 
             </List>
         </Box>
@@ -131,7 +134,7 @@ export function MainToolbar({ color }) {
 
     return (
         <div>
-            <AppBar position="static" sx={{ backgroundColor: 'rgb(30,30,30)' }}>
+            <AppBar position="static" sx={{ backgroundColor: 'rgb(30,30,30)' }} className='top-bar'>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -146,7 +149,35 @@ export function MainToolbar({ color }) {
 
                     <Typography sx={{ color: '#39FF14', fontFamily: 'Dancing Script', fontSize: '26px', letterSpacing: '1px' }}>Projects</Typography>
                     <Box sx={{ flexGrow: 1 }} />
-                    <Button color="inherit" sx={buttonToolBarStyle}>Blog</Button>
+                    <ButtonGroup variant="contained" aria-label="social media buttons">
+                        <Button
+                            sx={{ backgroundColor: '#1DA1F2', color: 'white' }}
+                            startIcon={<Twitter />}
+                            href="https://x.com/Stephen_C_Tech"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Twitter
+                        </Button>
+                        <Button
+                            sx={{ backgroundColor: '#0077b5', color: 'white' }}
+                            startIcon={<LinkedIn />}
+                            href="https://www.linkedin.com/in/stephen-cahillane-68689b27b/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn
+                        </Button>
+                        <Button
+                            sx={{ backgroundColor: 'grey', color: 'white' }}
+                            startIcon={<GitHubIcon />}
+                            href="https://github.com/StephenCahillane"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Github
+                        </Button>
+                    </ButtonGroup>
                     <Button color="inherit" sx={buttonToolBarStyle}>Get In Touch</Button>
 
                 </Toolbar>
