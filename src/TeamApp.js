@@ -65,37 +65,84 @@ const TeamApp = () => {
             </div>
 
             <div className='lowerApp'>
-                <Card sx={{ width: '70%', mt: 10, mb: 10, backgroundColor: 'rgb(50,50,50)!important', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', position: 'relative' }}>
-                    <div 
-                    onClick={() => window.location.href = 'https://sjcahillane-budget-tool.onrender.com'}
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        right: 0,
-                        width: '120px',
-                        height: '120px',
-                        backgroundColor: 'red',
-                        clipPath: 'polygon(100% 0, 100% 100%, 0 0)',
-                        display: 'flex',
-                        alignItems: 'start',
-                        justifyContent: 'center',
-                        cursor: 'pointer'
+
+
+                <div style={{ width: '90%', display: 'flex', flexDirection: 'row', alignItems: 'space-between' }}>
+
+
+                    <Card sx={{
+                        width: '70%', mt: 10, mb: 10,
+                        backgroundColor: 'rgb(50,50,50)!important',
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+                        position: 'relative',
+                        mr: 2
                     }}>
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                width: '120px',
+                                height: '120px',
+                                backgroundColor: 'blue',
+                                clipPath: 'polygon(100% 0, 100% 100%, 0 0)',
+                                display: 'flex',
+                                alignItems: 'start',
+                                justifyContent: 'center',
+                                cursor: 'pointer'
+                            }}>
 
-                        <Typography sx={{ fontFamily: 'Dancing Script', fontSize: '27px', ml: 2, color: 'white' }}>Visit</Typography>
-                    </div>
-                    <CardContent>
-                        <iframe
-                            title="Embedded YouTube Video"
-                            src="https://www.youtube.com/embed/tToODS_R7rI"
-                            width="100%"
-                            height="400px"
-                            style={{ border: 'none', margin: '0 auto' }}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        />
+                            <Typography sx={{ fontFamily: 'Dancing Script', fontSize: '18px', ml: 5.5, color: 'white' }}>Mentor Dashboard</Typography>
+                        </div>
+                        <CardContent>
+                            <iframe
+                                title="Embedded YouTube Video"
+                                src="https://www.youtube.com/embed/_MXOLPiIK4A"
+                                width="100%"
+                                height="400px"
+                                style={{ border: 'none', margin: '0 auto' }}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            />
 
-                    </CardContent>
-                </Card >
+                        </CardContent>
+                    </Card >
+
+                    <Card sx={{
+                        width: '70%', mt: 10, mb: 10,
+                        backgroundColor: 'rgb(50,50,50)!important',
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+                        position: 'relative'
+                    }}>
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                width: '120px',
+                                height: '120px',
+                                backgroundColor: 'blue',
+                                clipPath: 'polygon(100% 0, 100% 100%, 0 0)',
+                                display: 'flex',
+                                alignItems: 'start',
+                                justifyContent: 'center',
+                                cursor: 'pointer'
+                            }}>
+
+                            <Typography sx={{ fontFamily: 'Dancing Script', fontSize: '18px', ml: 5.5, color: 'white' }}>User Dashboard</Typography>
+                        </div>
+                        <CardContent>
+                            <iframe
+                                title="Embedded YouTube Video"
+                                src="https://www.youtube.com/embed/vdHdd2LFoc4"
+                                width="100%"
+                                height="400px"
+                                style={{ border: 'none', margin: '0 auto' }}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            />
+
+                        </CardContent>
+                    </Card >
+                </div>
             </div >
         </>
     );
