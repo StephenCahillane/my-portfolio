@@ -42,7 +42,7 @@ export function MainToolbar({ color }) {
                     <ListItemText primary='Budget Tool' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
 
                 </ListItem>
-                
+
                 <ListItem
                     button
                     onClick={() => navigate('/RegQuest')}
@@ -52,7 +52,14 @@ export function MainToolbar({ color }) {
 
                 </ListItem>
 
-                
+                <ListItem
+                    button
+                    onClick={() => navigate('/TeamApp')}
+                    sx={toolBarStyle}
+                >
+                    <ListItemText primary='Team App' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
+                </ListItem>
 
                 <ListItem
                     button

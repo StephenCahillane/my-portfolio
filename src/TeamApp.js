@@ -3,7 +3,7 @@ import MainToolbar from './Toolbar';
 import { Typography, List, ListItem, ListItemIcon, ListItemText, Card, CardContent, Badge } from '@mui/material';
 import StarsIcon from '@mui/icons-material/Stars';
 
-const Budget = () => {
+const TeamApp = () => {
     return (
         <>
             <MainToolbar color={'#1c2027'} />
@@ -12,20 +12,20 @@ const Budget = () => {
                 <div className='appHeaderLeft'>
 
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <Typography sx={{ color: 'white', fontSize: '100px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px', mr: 3 }}>
-                            Budget Tool
+                        <Typography sx={{ color: 'white', fontSize: '70px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px', mr: 3 }}>
+                            Developer Teams
                         </Typography>
 
-                        <div style={{ border: '#39FF14 solid 1px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px' }}>
-                            <Typography sx={{ color: '#39FF14', fontSize: '26px', maxWidth: '600px', fontFamily: 'Dancing Script' }}>
-                                5 Active Users
+                        <div style={{ border: 'red solid 1px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px', marginBottom: '20px' }}>
+                            <Typography sx={{ color: 'red', fontSize: '22px', maxWidth: '600px', fontFamily: 'Dancing Script' }}>
+                                In Production
                             </Typography>
                         </div>
 
                     </div>
 
                     <Typography sx={{ color: 'white', fontSize: '18px', maxWidth: '600px' }}>
-                        An application developed to help users track their spending and save money.
+                        An app developed to allow aspiring programmers to join a team, receive mentorship and be held accountable on tasks and study progress.
                     </Typography>
                 </div>
 
@@ -37,27 +37,27 @@ const Budget = () => {
                     <List>
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Set categories of spending and track areas needed to work on.' />
+                            <ListItemText sx={{ color: 'white' }} primary='Join a team of aspiring programmers with the same goal.' />
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Set a budget, and log each days spending.' />
+                            <ListItemText sx={{ color: 'white' }} primary='Receive guidance from a mentor, and attend weekly classes with your mentor.' />
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Daily, weekly, monthly and yearly totals in amount saved and spent.' />
+                            <ListItemText sx={{ color: 'white' }} primary='Real time chat with your fellow team members, powered by Socket.io' />
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Utilize charts and graphs to visualize progress.' />
+                            <ListItemText sx={{ color: 'white' }} primary='Mentor Dashboard to view member task progress, study times and schedule events.' />
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }}>
                             <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Email updates on user savings and spending for accountability.' />
+                            <ListItemText sx={{ color: 'white' }} primary='Ranking system to receive rewards for completing daily tasks, study times. ' />
                         </ListItem>
 
                     </List>
@@ -65,7 +65,7 @@ const Budget = () => {
             </div>
 
             <div className='lowerApp'>
-                <Card sx={{ width: '70%', mt: 10, mb: 10, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', position: 'relative' }}>
+                <Card sx={{ width: '70%', mt: 10, mb: 10, backgroundColor: 'rgb(50,50,50)!important', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', position: 'relative' }}>
                     <div 
                     onClick={() => window.location.href = 'https://sjcahillane-budget-tool.onrender.com'}
                     style={{
@@ -102,4 +102,4 @@ const Budget = () => {
 
 }
 
-export default Budget;
+export default TeamApp;

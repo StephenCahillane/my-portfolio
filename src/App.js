@@ -11,7 +11,7 @@ import VisionBoard from './VisionBoard';
 import Routine from './Routine';
 import Future from './Future';
 import Budget from './Budget';
-
+import TeamApp from './TeamApp';
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
           <Route path="/routine" element={<Routine />} />
           <Route path="/future" element={<Future />} />
           <Route path="/Budget" element={<Budget />} />
+          <Route path="/TeamApp" element={<TeamApp />} />
         </Routes>
       </Router>
     </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Typography, Button, Table, TableContainer, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import { infoCardStyle } from '../Styles/HomePageStyles';
-import HeaderAboutMe from './HeaderAboutMe';
 import { projectLogs, paragraphs } from '../Logs';
 import Dropdown from './Dropdown';
 
@@ -11,8 +10,23 @@ export const UpdateCard = () => {
 
 
     const [activeProject, setActiveProject] = useState("Team Mentorship")
-    const [logs, setLogs] = useState(projectLogs);
+    const [logs, setLogs] = useState([]);
     const [paras, setParas] = useState(paragraphs);
+    const [reversedLogs, setReversedLogs] = useState([])
+
+
+    useEffect(() => {
+        // Sort the logs by Date in descending order (most recent first)
+        const sortedLogs = [...projectLogs].sort((a, b) => {
+            const dateA = new Date(a.Date);
+            const dateB = new Date(b.Date);
+            return dateB - dateA; // Sorting in descending order
+        });
+        
+        setReversedLogs(sortedLogs); // Set the sorted logs
+        setLogs(sortedLogs); // Optionally, set the logs as well
+    }, []); 
+
 
 
     return (
