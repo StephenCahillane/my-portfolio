@@ -11,16 +11,23 @@ export function ProfileToolbar({ color, buttons, setter1, setter2, setter3, sett
             setter1(false);
             setter2(true);
             setter3(false);
+            setter4(false);
         } else if (type === 'About') {
             setter1(true);
             setter2(false);
             setter3(false);
+            setter4(false);
         } else if (type === 'Progress') {
             setter1(false);
             setter2(false);
             setter3(false);
-            setter4(true)
-        };
+            setter4(true);
+        } else if (type === 'Education'){
+            setter4(false);
+            setter1(false);
+            setter2(false);
+            setter3(true);
+        }
     };
 
     return (
