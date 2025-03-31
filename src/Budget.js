@@ -37,27 +37,27 @@ const Budget = () => {
                     <List className='list-features'>
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <Typography className='features-text' sx={{ color: 'white' }}>Set categories of spending and track areas needed to work on.</Typography>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Solve RegEx Problems to escape traps.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <Typography className='features-text' sx={{ color: 'white' }}>Set a budget, and log each days spending.</Typography>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Moveable character with animations in a cartoon environment.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <Typography className='features-text' sx={{ color: 'white' }}>Daily, weekly, monthly and yearly totals in amount saved and spent.</Typography>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Checking Algorithm built to match user input with RegEx Password to escape trap.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <Typography className='features-text' sx={{ color: 'white' }}>Utilize charts and graphs to visualize progress.</Typography>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Basic RegEx lessons to tutor users.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
                             <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <Typography className='features-text' sx={{ color: 'white' }}>Email updates on user savings and spending for accountability.</Typography>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Participated in daily scrum meetings, stand ups and operated in an agile environment.</Typography>
                         </ListItem>
 
                     </List>

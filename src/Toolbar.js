@@ -42,93 +42,21 @@ export function MainToolbar({ color }) {
                     sx={toolBarStyle}
                 >
                     <ListItemText primary='TeamUp Tech' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
                 </ListItem>
-
                 <ListItem
                     button
                     onClick={() => navigate('/Budget')}
                     sx={toolBarStyle}
                 >
                     <ListItemText primary='Budget Tool' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
                 </ListItem>
-
                 <ListItem
                     button
                     onClick={() => navigate('/RegQuest')}
                     sx={toolBarStyle}
                 >
                     <ListItemText primary='RegQuest' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
                 </ListItem>
-
-
-
-                <ListItem
-                    button
-                    onClick={() => navigate('/Vision')}
-                    sx={toolBarStyle}
-                >
-                    <ListItemText primary='Vision App' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
-                </ListItem>
-                <Box sx={{ paddingLeft: 0.0 }}>
-
-                    <ListItem
-                        button
-                        onClick={() => navigate('/Vision', { state: { section: 'future' } })}
-                        sx={toolBarStyle}
-                    >
-                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
-                        <ListItemText primary='Planner' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-                    </ListItem>
-
-
-                    <ListItem
-                        button
-                        onClick={() => navigate('/Vision', { state: { section: 'tasks' } })}
-                        sx={toolBarStyle}
-                    >
-                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
-                        <ListItemText primary='Tasks' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-                    </ListItem>
-
-                    <ListItem
-                        button
-                        onClick={() => navigate('/Vision', { state: { section: 'visionBoard' } })}
-                        sx={toolBarStyle}
-                    >
-
-                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
-                        <ListItemText primary='Visionboard' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
-                    </ListItem>
-
-                    <ListItem
-                        button
-                        onClick={() => navigate('/Vision', { state: { section: 'studyCenter' } })}
-                        sx={toolBarStyle}
-                    >
-                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
-                        <ListItemText primary='Study Center' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
-                    </ListItem>
-
-                    <ListItem
-                        button
-                        onClick={() => navigate('/Vision', { state: { section: 'routine' } })}
-                        sx={toolBarStyle}
-                    >
-                        <ChevronRightIcon sx={{ fontSize: '28px', color: '#39FF14' }} />
-                        <ListItemText primary='Routine' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
-
-
-                    </ListItem>
-
-                </Box>
-
-
             </List>
         </Box>
     );

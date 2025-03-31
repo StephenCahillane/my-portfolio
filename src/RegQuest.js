@@ -12,53 +12,52 @@ function RegQuest() {
             <div className='headerApp'>
                 <div className='appHeaderLeft'>
 
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <Typography sx={{ color: 'white', fontSize: '70px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px', mr: 3 }}>
+                    <div style={{ display: 'flex', alignItems: 'center' }} className='top-header-app'>
+                        <Typography className='app-title' sx={{ color: 'white', fontSize: '70px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px', mr: 3 }}>
                             Reg Quest
                         </Typography>
 
-                        <div style={{ border: '#39FF14 solid 1px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px', marginBottom: '20px' }}>
-                            <Typography sx={{ color: '#39FF14', fontSize: '22px', maxWidth: '600px', fontFamily: 'Dancing Script' }}>
+                        <div className='production-box' style={{ border: '#39FF14 solid 1px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px', marginBottom: '20px' }}>
+                            <Typography className='in-production' sx={{ color: '#39FF14', fontSize: '22px', maxWidth: '600px', fontFamily: 'Dancing Script' }}>
                                 Live 
                             </Typography>
                         </div>
 
                     </div>
-                    <Typography sx={{ color: 'white', fontSize: '18px', maxWidth: '600px' }}>An application developed to help young programmers understand and
+                    <Typography className='explanation' sx={{ color: 'white', fontSize: '18px', maxWidth: '600px' }}>An application developed to help young programmers understand and
                         use Regular Expressions in a fun, game environment.
                     </Typography>
                 </div>
 
                 <div className='appHeaderRight'>
-                    <Typography sx={{ color: '#39FF14', fontSize: '25px', maxWidth: '600px', mb: 2, fontFamily: 'Dancing Script' }}>
+                    <Typography className='features' sx={{ color: '#39FF14', fontSize: '25px', maxWidth: '600px', mb: 2, fontFamily: 'Dancing Script' }}>
                         Features
                     </Typography>
 
-                    <List>
+                    <List className='list-features'>
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Solve RegEx Problems to escape traps.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Set categories of spending and track areas needed to work on.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Moveable character with animations in a cartoon environment.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Set categories of spending and track areas needed to work on.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Checking Algorithm built to match user input with RegEx Password to escape trap.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Set categories of spending and track areas needed to work on.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Basic RegEx lessons to tutor users.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Set categories of spending and track areas needed to work on.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Participated in daily scrum meetings, stand ups and operated
-                            in an agile environment.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Set categories of spending and track areas needed to work on.</Typography>
                         </ListItem>
 
                     </List>
@@ -66,7 +65,7 @@ function RegQuest() {
             </div>
 
             <div className='lowerApp'>
-                <Card sx={{ position: 'relative', width: '75%', mt: 10, mb: 10, backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card className='vid-card' sx={{ position: 'relative', width: '75%', mt: 10, mb: 10, backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                 <div 
                     onClick={() => window.location.href = 'https://github.com/StephenCahillane'}
                     style={{
@@ -86,7 +85,7 @@ function RegQuest() {
                         <Typography sx={{ fontFamily: 'Dancing Script', fontSize: '27px', ml: 3, color: 'white' }}>Github</Typography>
                     </div>
                     
-                    <CardContent>
+                    <CardContent className='vid-card-content'>
                         <iframe
                             title="Embedded YouTube Video"
                             src="https://www.youtube.com/embed/R0ujZbNLKHY"
