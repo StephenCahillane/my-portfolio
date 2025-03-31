@@ -36,6 +36,14 @@ export function MainToolbar({ color }) {
                     <ListItemText primary='Home' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
                 </ListItem>
 
+                <ListItem
+                    button
+                    onClick={() => navigate('/TeamApp')}
+                    sx={toolBarStyle}
+                >
+                    <ListItemText primary='TeamUp Tech' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
+
+                </ListItem>
 
                 <ListItem
                     button
@@ -55,14 +63,7 @@ export function MainToolbar({ color }) {
 
                 </ListItem>
 
-                <ListItem
-                    button
-                    onClick={() => navigate('/TeamApp')}
-                    sx={toolBarStyle}
-                >
-                    <ListItemText primary='Team App' primaryTypographyProps={{ sx: { fontSize: 24, fontFamily: 'Dancing Script' } }} />
 
-                </ListItem>
 
                 <ListItem
                     button
@@ -151,8 +152,9 @@ export function MainToolbar({ color }) {
                     <Box sx={{ flexGrow: 1 }} />
                     <ButtonGroup variant="contained" aria-label="social media buttons">
                         <Button
+                            className='social-media-icons'
                             sx={{ backgroundColor: '#1DA1F2', color: 'white' }}
-                            startIcon={<Twitter />}
+                            startIcon={<Twitter className='icon'/>}
                             href="https://x.com/Stephen_C_Tech"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -160,8 +162,9 @@ export function MainToolbar({ color }) {
                             Twitter
                         </Button>
                         <Button
+                            className='social-media-icons'
                             sx={{ backgroundColor: '#0077b5', color: 'white' }}
-                            startIcon={<LinkedIn />}
+                            startIcon={<LinkedIn className='icon'/>}
                             href="https://www.linkedin.com/in/stephen-cahillane-68689b27b/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -169,8 +172,9 @@ export function MainToolbar({ color }) {
                             LinkedIn
                         </Button>
                         <Button
+                            className='social-media-icons'
                             sx={{ backgroundColor: 'grey', color: 'white' }}
-                            startIcon={<GitHubIcon />}
+                            startIcon={<GitHubIcon className='icon'/>}
                             href="https://github.com/StephenCahillane"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -178,7 +182,7 @@ export function MainToolbar({ color }) {
                             Github
                         </Button>
                     </ButtonGroup>
-                    <Button color="inherit" sx={buttonToolBarStyle}>Get In Touch</Button>
+                    <Button className='get-in-touch' color="inherit" sx={buttonToolBarStyle}>Get In Touch</Button>
 
                 </Toolbar>
             </AppBar>
