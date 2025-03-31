@@ -65,7 +65,7 @@ const Budget = () => {
             </div>
 
             <div className='lowerApp'>
-                <Card sx={{ width: '70%', mt: 10, mb: 10, backgroundColor: '#282c34', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', position: 'relative' }}>
+                <Card sx={{ width: '70%', mt: 10, mb: 10, backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)', position: 'relative' }}>
                     <div 
                     onClick={() => window.location.href = 'https://sjcahillane-budget-tool.onrender.com'}
                     style={{

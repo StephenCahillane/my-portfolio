@@ -9,7 +9,7 @@ export const InfoCard = () => {
       <CardContent>
         <HeaderAboutMe />
         <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
-          I am a passionate Full Stack Developer with <span style={{ color: '#39FF14' }}>two years of experience </span>specializing in Java, Spring, React, and web design languages.
+          I am a passionate Full Stack Developer with <span style={{ color: '#39FF14' }}>three years of experience </span>specializing in Java, Spring, React, and web design languages.
           My journey in tech is complemented by a <span style={{ color: '#39FF14' }}>solid foundation in networking and cybersecurity, </span>
           ensuring a well-rounded approach to building secure and efficient applications.
 

@@ -22,10 +22,10 @@ export const UpdateCard = () => {
             const dateB = new Date(b.Date);
             return dateB - dateA; // Sorting in descending order
         });
-        
+
         setReversedLogs(sortedLogs); // Set the sorted logs
         setLogs(sortedLogs); // Optionally, set the logs as well
-    }, []); 
+    }, []);
 
 
 
@@ -38,43 +38,31 @@ export const UpdateCard = () => {
                     Projects I'm Currently Working On
                 </Typography>
 
-                <Button sx={{ display: 'block', margin: '0 auto', mt: 2, mb: 2, color: '#39FF14', border: 'solid 1px #39FF14' }} variant='outlined'>View My Live Streamed Code-a-longs</Button>
+                <Button  onClick={() => window.open("https://hashnode.com/@stephen-cah", "_blank")} sx={{ display: 'block', margin: '0 auto', mt: 2, mb: 2, color: '#39FF14', border: 'solid 1px #39FF14' }} variant='outlined'>View My Progress Blogs</Button>
 
-                <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: '2em', marginBottom: '2em'}}>
-                    <Typography sx={{color: 'white', fontFamily: 'Dancing Script', fontSize: '22px'}}>{activeProject}</Typography>
-                    <Dropdown setSelectedValue={setActiveProject} selectedValue={activeProject}></Dropdown>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: '2em', marginBottom: '2em' }}>
+                    <Typography sx={{ color: 'white', fontFamily: 'Dancing Script', fontSize: '22px' }}>{activeProject}</Typography>
                 </div>
 
 
-                <Typography sx={{color: 'white', fontSize: '14px'}}>
+                <Typography sx={{ color: 'white', fontSize: '14px' }}>
                     {paras[activeProject]}
                 </Typography>
 
-                <Typography sx={{color: 'white', textAlign: 'center', mt: 2, mb: 2}}>Progress Logs</Typography>
+                <Typography sx={{ color: 'white', textAlign: 'center', mt: 2, mb: 2 }}>Progress Logs</Typography>
 
 
 
-                <TableContainer sx={{maxHeight: '250px', overflow: 'auto', padding: 0.5}}>
-                    <Table>
-                        <TableHead sx={{border: 'solid 1px #39FF14'}}>
-                            <TableRow sx={{border: 'solid 1px #39FF14'}}>
-                                <TableCell sx={{border: 'solid 1px #39FF14', width: '80px', color: '#39FF14', backgroundColor: 'rgb(20,20,20)'}}>Date</TableCell>
-                                <TableCell sx={{border: 'solid 1px #39FF14', color: '#39FF14', backgroundColor: 'rgb(20,20,20)'}}>Description</TableCell>
-                                
-                            </TableRow>
-                        </TableHead>
-
-                        <TableBody sx={{border: 'solid 1px #39FF14'}}>
-                            {logs?.filter((log) => log.Project === activeProject).map((log, index) => (
-                                <TableRow sx={{border: 'solid 1px #39FF14'}} key={index}>
-                                    <TableCell sx={{border: 'solid 1px #39FF14', color: 'white', backgroundColor: 'rgb(20,20,20)'}}>{log.Date}</TableCell>
-                                    <TableCell sx={{border: 'solid 1px #39FF14', color: 'white', fontSize: '11px', backgroundColor: 'rgb(20,20,20)'}}>{log.Description}</TableCell>
-                                    
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                <div style={{ maxHeight: '300px', height: '300px', minHeight: '300px' }}>
+                    <iframe
+                        title="Embedded YouTube Video"
+                        src="https://www.youtube.com/embed/zbVgoqshEsk"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 'none', margin: '0 auto' }}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    />
+                </div>
 
 
 

@@ -16,7 +16,8 @@ export const LoadingBox = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                borderRadius: '10px'
+                borderRadius: '10px',
+                zIndex: 10000
               }}
             >
               <div className='loadingScreen'>

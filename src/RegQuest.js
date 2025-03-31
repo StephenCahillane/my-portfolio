@@ -66,7 +66,7 @@ function RegQuest() {
             </div>
 
             <div className='lowerApp'>
-                <Card sx={{ position: 'relative', width: '75%', mt: 10, mb: 10, backgroundColor: 'rgb(30,30,30)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
+                <Card sx={{ position: 'relative', width: '75%', mt: 10, mb: 10, backgroundColor: 'rgb(20,20,20)', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)' }}>
                 <div 
                     onClick={() => window.location.href = 'https://github.com/StephenCahillane'}
                     style={{

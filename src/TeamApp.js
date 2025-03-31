@@ -13,7 +13,7 @@ const TeamApp = () => {
 
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <Typography sx={{ color: 'white', fontSize: '70px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px', mr: 3 }}>
-                            Developer Teams
+                            TeamUp Tech
                         </Typography>
 
                         <div style={{ border: 'red solid 1px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px', marginBottom: '20px' }}>
@@ -72,7 +72,7 @@ const TeamApp = () => {
 
                     <Card sx={{
                         width: '70%', mt: 10, mb: 10,
-                        backgroundColor: 'rgb(50,50,50)!important',
+                        backgroundColor: 'rgb(20,20,20)!important',
                         boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
                         position: 'relative',
                         mr: 2
@@ -109,7 +109,7 @@ const TeamApp = () => {
 
                     <Card sx={{
                         width: '70%', mt: 10, mb: 10,
-                        backgroundColor: 'rgb(50,50,50)!important',
+                        backgroundColor: 'rgb(20,20,20)!important',
                         boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
                         position: 'relative'
                     }}>
@@ -133,7 +133,7 @@ const TeamApp = () => {
                         <CardContent>
                             <iframe
                                 title="Embedded YouTube Video"
-                                src="https://www.youtube.com/embed/vdHdd2LFoc4"
+                                src="https://www.youtube.com/embed/zbVgoqshEsk"
                                 width="100%"
                                 height="400px"
                                 style={{ border: 'none', margin: '0 auto' }}

@@ -13,7 +13,7 @@ export const ExpCard = () => {
 
               <Typography sx={{ color: 'white', fontSize: '14px', mt: 3, }}>
                 <div style={{ textAlign: 'center', color: '#39FF14' }}>
-                  <span>Agency Admin, One Source ICT, June 2023 - Current</span>
+                  <span>Agency Admin, One Source ICT, June 2021 - Current</span>
                 </div>
 
                 <div className='paragraph'>
