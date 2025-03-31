@@ -4,6 +4,12 @@ body {
   background-color: rgb(20, 20, 20);
 }
 
+@media(max-width: 768px){
+  body{
+    width: 768px!important;
+  }
+}
+
 .canvas {
   background-image: url('../public/bg-night.jpg');
   background-position: center;
@@ -23,6 +29,16 @@ body {
   margin-bottom: 3em;
 }
 
+@media (max-width: 768px){
+  .home-page {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    width: 650px!important;
+    flex-direction: column!important;
+  }
+}
+
 .profileCard {
   width: 650px;
   background-color: #201e22;
@@ -31,16 +47,10 @@ body {
 
 @media (max-width: 768px) {
   .profileCard {
-    width: 90%;
-    /* Adjust the width for small screens */
-    max-width: 350px;
-    /* Optional: Set a max width */
-    margin: auto;
-    /* Center it */
+    width: 600px!important;
+    margin-right: 120px!important
   }
 }
-
-;
 
 @media (max-width: 768px) {
   .homepage {
@@ -48,6 +58,18 @@ body {
     /* Changes to a column layout */
     align-items: center !important;
     /* Centers items horizontally */
+  }
+};
+
+@media (max-width: 768px){
+  .controls-card {
+    margin-right: 120px!important;
+  }
+}
+
+@media (max-width: 768px){
+  .rightSide {
+    margin-right: 220px!important;
   }
 }
 
@@ -58,7 +80,30 @@ body {
 
 @media (max-width: 768px) {
   .top-bar {
-    width: 650px!important;
+    width: 768px!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger-btn {
+    width: 30px!important;
+    margin-left: 10px!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger-icon {
+    
+  }
+}
+
+
+
+@media (max-width: 768px){
+  .projects-text {
+    font-size: 18px!important;
+    margin-left: 0!important;
+    margin-right: 50px!important;
   }
 }
 
@@ -78,6 +123,7 @@ body {
     width: 100px!important;
     height: 30px!important;
     font-size: 10px!important;
+    margin-right: 130px!important;
   }
 }
 
@@ -181,6 +227,143 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+
+
+@media (max-width: 768px){
+  .appHeaderLeft {
+    width: 90%!important;
+    margin: 0 auto!important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .headerApp {
+    width: 600px;
+    margin: 0 auto!important;
+    margin-right: 290px;
+    margin-top:0!important;
+    display: flex!important;
+    flex-direction: column!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .explanation {
+    font-size: 12px!important;
+    text-align: center!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-features {
+    width: 600px!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-features {
+    margin: 0 auto!important;
+    width: 600px!important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .in-production {
+    font-size: 12px!important;
+    margin: 0!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .production-box {
+    margin: 0!important;
+    margin-left: 10px!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 36px!important;
+    margin: 0!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    font-size: 16px!important;
+    margin: 0!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-text {
+    font-size: 10px!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .listIcon {
+    font-size: 10px!important;
+  }
+}
+
+@media (max-width: 768px){
+  .top-header-app{
+    width: 90%;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    margin: 0!important;
+    margin: 0 auto!important;
+  }
+}
+
+
+@media (max-width: 768px){
+  .appHeaderRight {
+    margin: 0 auto!important;
+    width: 600px!important;
+  }
+}
+
+@media (max-width: 768px) {
+  .lower-app-vids{
+    display: flex!important;
+    flex-direction: column!important;
+  }
+}
+
+@media (max-width: 768px){
+  .lowerApp{
+    margin: 0 auto!important;
+    width: 767px;
+
+  }
+};
+
+
+
+@media (max-width: 768px){
+  .vid-card-content {
+    margin: 0 auto!important;
+    width: 700px!important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .vid-card {
+      width: 90% !important;  /* Make it responsive */
+      margin: 10px auto !important;  /* Center the card */
+  }
+  
+  .iframe-vid {
+      height: 250px !important;  /* Adjust iframe height for smaller screens */
+  }
+}
+
 
 .appHeaderLeft {
   width: 40%;

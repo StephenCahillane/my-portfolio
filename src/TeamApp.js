@@ -11,53 +11,53 @@ const TeamApp = () => {
             <div className='headerApp'>
                 <div className='appHeaderLeft'>
 
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <Typography sx={{ color: 'white', fontSize: '70px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px', mr: 3 }}>
+                    <div style={{ display: 'flex', alignItems: 'center' }} className='top-header-app'>
+                        <Typography className='app-title' sx={{ color: 'white', fontSize: '70px', mb: 2, fontFamily: "Bebas Neue", letterSpacing: '2px', mr: 3 }}>
                             TeamUp Tech
                         </Typography>
 
-                        <div style={{ border: 'red solid 1px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px', marginBottom: '20px' }}>
-                            <Typography sx={{ color: 'red', fontSize: '22px', maxWidth: '600px', fontFamily: 'Dancing Script' }}>
+                        <div className='production-box' style={{ border: 'red solid 1px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3px', marginBottom: '20px' }}>
+                            <Typography className='in-production' sx={{ color: 'red', fontSize: '22px', maxWidth: '600px', fontFamily: 'Dancing Script' }}>
                                 In Production
                             </Typography>
                         </div>
 
                     </div>
 
-                    <Typography sx={{ color: 'white', fontSize: '18px', maxWidth: '600px' }}>
+                    <Typography  className='explanation' sx={{ color: 'white', fontSize: '18px', maxWidth: '600px' }}>
                         An app developed to allow aspiring programmers to join a team, receive mentorship and be held accountable on tasks and study progress.
                     </Typography>
                 </div>
 
                 <div className='appHeaderRight'>
-                    <Typography sx={{ color: '#39FF14', fontSize: '25px', maxWidth: '600px', mb: 2, fontFamily: 'Dancing Script' }}>
+                    <Typography className='features' sx={{ color: '#39FF14', fontSize: '25px', maxWidth: '600px', mb: 2, fontFamily: 'Dancing Script' }}>
                         Features
                     </Typography>
 
-                    <List>
+                    <List className='list-features'>
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Join a team of aspiring programmers with the same goal.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Team based platform where users attend classes with a mentor.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Receive guidance from a mentor, and attend weekly classes with your mentor.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Mentor can assign tasks, monitor progress and follow up with users.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Real time chat with your fellow team members, powered by Socket.io' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Real time voice calling and messaging with Socket.io.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Mentor Dashboard to view member task progress, study times and schedule events.' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Inbuilt IDE for solving algorithm challenges.</Typography>
                         </ListItem>
 
                         <ListItem sx={{ backgroundColor: 'rgb(30,30,30)', mb: 1, mt: 1 }} className='project-features'>
-                            <ListItemIcon><StarsIcon sx={{ color: '#39FF14' }} /></ListItemIcon>
-                            <ListItemText sx={{ color: 'white' }} primary='Ranking system to receive rewards for completing daily tasks, study times. ' />
+                            <ListItemIcon><StarsIcon className='listIcon' sx={{ color: '#39FF14' }} /></ListItemIcon>
+                            <Typography className='features-text' sx={{ color: 'white' }}>Ranking system to receive rewards for completing daily tasks, study times.</Typography>
                         </ListItem>
 
                     </List>
@@ -67,16 +67,15 @@ const TeamApp = () => {
             <div className='lowerApp'>
 
 
-                <div style={{ width: '90%', display: 'flex', flexDirection: 'row', alignItems: 'space-between' }}>
-
-
+                <div style={{ width: '90%', display: 'flex', flexDirection: 'row', alignItems: 'space-between' }} class='lower-app-vids'>
                     <Card sx={{
                         width: '70%', mt: 10, mb: 10,
                         backgroundColor: 'rgb(20,20,20)!important',
                         boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
                         position: 'relative',
                         mr: 2
-                    }}>
+                    }} className='vid-card'
+                    >
                         <div
                             style={{
                                 position: 'absolute',
@@ -94,8 +93,9 @@ const TeamApp = () => {
 
                             <Typography sx={{ fontFamily: 'Dancing Script', fontSize: '18px', ml: 5.5, color: 'white' }}>Mentor Dashboard</Typography>
                         </div>
-                        <CardContent>
+                        <CardContent className='vid-card-content'>
                             <iframe
+                                class='iframe-vid'
                                 title="Embedded YouTube Video"
                                 src="https://www.youtube.com/embed/_MXOLPiIK4A"
                                 width="100%"
@@ -107,7 +107,8 @@ const TeamApp = () => {
                         </CardContent>
                     </Card >
 
-                    <Card sx={{
+                    <Card className='vid-card'
+                    sx={{
                         width: '70%', mt: 10, mb: 10,
                         backgroundColor: 'rgb(20,20,20)!important',
                         boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',

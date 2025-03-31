@@ -144,11 +144,12 @@ export function MainToolbar({ color }) {
                         aria-label="menu"
                         sx={{ mr: 2 }}
                         onClick={toggleDrawer}
+                        className='burger-btn'
                     >
-                        <MenuIcon sx={{ color: '#39FF14' }} />
+                        <MenuIcon sx={{ color: '#39FF14' }} className='burger-icon' />
                     </IconButton>
 
-                    <Typography sx={{ color: '#39FF14', fontFamily: 'Dancing Script', fontSize: '26px', letterSpacing: '1px' }}>Projects</Typography>
+                    <Typography className='projects-text' sx={{ color: '#39FF14', fontFamily: 'Dancing Script', fontSize: '26px', letterSpacing: '1px' }}>Projects</Typography>
                     <Box sx={{ flexGrow: 1 }} />
                     <ButtonGroup variant="contained" aria-label="social media buttons">
                         <Button
